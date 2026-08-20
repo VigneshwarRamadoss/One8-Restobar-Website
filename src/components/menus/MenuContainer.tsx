@@ -1,12 +1,7 @@
-'use client';
-
-import { useState } from 'react';
 import MenuCategory from './MenuCategory';
 import MenuEmptyState from './MenuEmptyState';
-import { MenuChapter as MenuChapterType, DietaryMarker } from '@/lib/cms/content-provider';
+import { MenuChapter as MenuChapterType } from '@/lib/cms/content-provider';
 import styles from './MenuContainer.module.css';
-
-type FilterOption = 'ALL' | DietaryMarker;
 
 interface Props {
   chapters: MenuChapterType[];
@@ -14,50 +9,63 @@ interface Props {
 }
 
 export default function MenuContainer({ chapters, currency = 'INR' }: Props) {
-  const [activeFilter, setActiveFilter] = useState<FilterOption>('ALL');
-
-  // Count matching items
-  const matchingItemCount = chapters.reduce((acc, chapter) => {
-    return acc + chapter.categories.reduce((catAcc, cat) => {
-      return catAcc + cat.menuItems.filter(item => {
-        if (activeFilter === 'ALL') return true;
-        return item.dietary?.includes(activeFilter as DietaryMarker);
-      }).length;
-    }, 0);
-  }, 0);
+  if (!chapters || chapters.length === 0) {
+    return <MenuEmptyState activeFilter="ALL" onResetFilter={() => {}} />;
+  }
 
   return (
     <div className={styles.container}>
-      {/* Dietary filters and tags are hidden until kitchen-approved data exists. */}
-
-      {matchingItemCount === 0 ? (
-        <MenuEmptyState activeFilter={activeFilter} onResetFilter={() => setActiveFilter('ALL')} />
-      ) : (
-        <div className={styles.chapters}>
-          {chapters.map((chapter, index) => {
-            const num = (index + 1).toString().padStart(2, '0');
-            return (
-              <div key={chapter.id} className={styles.chapterWrapper} id={chapter.id}>
-                <h2 className={styles.chapterTitle}>
-                  <span className={styles.chapterNum}>{num}</span> {chapter.title}
-                </h2>
-                {chapter.introduction && <p className={styles.chapterIntro}>{chapter.introduction}</p>}
-                
-                <div className={styles.categories}>
-                  {chapter.categories.map(category => (
-                    <MenuCategory 
-                      key={category.id} 
-                      category={category} 
-                      currency={currency} 
-                      activeFilter={activeFilter} 
-                    />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      {/* Compact Chapter Navigation Index */}
+      {chapters.length > 1 && (
+        <nav className={styles.chapterNav} aria-label="Menu chapters">
+          <span className={styles.chapterNavLabel}>Chapters:</span>
+          <ul className={styles.chapterNavList}>
+            {chapters.map((chapter, index) => (
+              <li key={chapter.id}>
+                <a href={`#${chapter.id}`} className={styles.chapterNavLink}>
+                  <span className={styles.chapterNavNum}>
+                    {(index + 1).toString().padStart(2, '0')}
+                  </span>
+                  {chapter.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       )}
+
+      <div className={styles.chapters}>
+        {chapters.map((chapter, index) => {
+          const num = (index + 1).toString().padStart(2, '0');
+          return (
+            <section key={chapter.id} className={styles.chapterWrapper} id={chapter.id}>
+              <h2 className={styles.chapterTitle}>
+                <span className={styles.chapterNum}>{num}</span> {chapter.title}
+              </h2>
+              {chapter.introduction && (
+                <p className={styles.chapterIntro}>{chapter.introduction}</p>
+              )}
+
+              <div className={styles.categories}>
+                {chapter.categories.map(category => (
+                  <MenuCategory
+                    key={category.id}
+                    category={category}
+                    currency={currency}
+                    activeFilter="ALL"
+                  />
+                ))}
+              </div>
+
+              <div className={styles.backToTopWrapper}>
+                <a href="#main-content" className={styles.backToTopLink}>
+                  ↑ Back to top
+                </a>
+              </div>
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -5,14 +5,14 @@ import MenuIndex from '@/components/menus/MenuIndex';
 import { getAllMenus, getVenueContact } from '@/lib/cms/content-provider';
 
 export const metadata: Metadata = {
-  title: 'Menus | One 8 Restobar',
-  description: 'Explore the food, drinks, and wine menus at One 8 Restobar. Shared plates, crafted pours, and curated vintages.',
+  title: 'Menus',
+  description: 'Explore the seasonal Food Menu at One 8 Restobar. Shared plates, tandoor specialities, and wood-fired mains.',
   alternates: {
     canonical: '/menus',
   },
   openGraph: {
     title: 'Menus | One 8 Restobar',
-    description: 'Explore the food, drinks, and wine menus at One 8 Restobar.',
+    description: 'Explore the seasonal Food Menu at One 8 Restobar.',
     url: '/menus',
     type: 'website',
   },
@@ -25,7 +25,7 @@ export default async function MenusPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <MenuIndex menus={menus} contact={contact} />
       </main>
       <Footer />

@@ -1,29 +1,39 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getOperatingHours, getVenueContact } from '@/lib/cms/content-provider';
+import { getActiveNavItems } from '@/lib/config/navigation';
 import ReservationCTA from './ReservationCTA';
 import LiveStatus from './LiveStatus';
 import styles from './Footer.module.css';
 
 export default async function Footer() {
-  const showCredit = true; // Configurable flag per PRD / MASTER prompt
+  const showCredit = true;
   const hours = await getOperatingHours();
   const contact = await getVenueContact();
-  
+  const navItems = getActiveNavItems();
+
+  // Strip internal draft labels in production
+  const cleanAddress = contact.address && !contact.address.includes('[DRAFT') ? contact.address : null;
+  const cleanCity = contact.city && !contact.city.includes('[DRAFT') ? contact.city : null;
+  const cleanHours = hours.hoursDetail && !hours.hoursDetail.includes('[DRAFT') ? hours.hoursDetail : null;
+
   return (
     <footer className={styles.footer} data-theme="night">
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.column}>
             <h2 className={styles.logo}>One 8 Restobar</h2>
-            <address className={styles.address}>
-              <p>{contact.address || '[DRAFT - Address Pending]'}</p>
-              {contact.city && <p>{contact.city}</p>}
-              {contact.mapsUrl && (
-                <a href={contact.mapsUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                  Get directions
-                </a>
-              )}
-            </address>
+            {(cleanAddress || cleanCity) && (
+              <address className={styles.address}>
+                {cleanAddress && <p>{cleanAddress}</p>}
+                {cleanCity && <p>{cleanCity}</p>}
+                {contact.mapsUrl && (
+                  <a href={contact.mapsUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                    Get directions
+                  </a>
+                )}
+              </address>
+            )}
           </div>
 
           <div className={styles.column}>
@@ -31,38 +41,44 @@ export default async function Footer() {
             <div className={styles.hoursStatus}>
               <LiveStatus />
             </div>
-            <p className={styles.hoursDetail}>{hours.hoursDetail}</p>
+            {cleanHours ? (
+              <p className={styles.hoursDetail}>{cleanHours}</p>
+            ) : (
+              <p className={styles.hoursDetail}>Hours available upon reservation enquiry.</p>
+            )}
           </div>
 
           <div className={styles.column}>
-            <h3 className={styles.heading}>Contact</h3>
-            {contact.phone ? (
-              <p><a href={`tel:${contact.phone}`} className={styles.link}>{contact.phone}</a></p>
-            ) : (
-              <p className={styles.draftText}>Phone: [DRAFT - Pending]</p>
-            )}
-            {contact.email ? (
-              <p><a href={`mailto:${contact.email}`} className={styles.link}>{contact.email}</a></p>
-            ) : (
-              <p className={styles.draftText}>Email: [DRAFT - Pending]</p>
-            )}
+            <h3 className={styles.heading}>Navigation</h3>
+            <nav aria-label="Footer navigation">
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {navItems.map(item => (
+                  <li key={item.href}>
+                    <Link href={item.href} className={styles.link}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-          
+
           <div className={`${styles.column} ${styles.reserveColumn}`}>
-             <ReservationCTA variant="secondary" href={contact.openTableUrl} />
+            <ReservationCTA variant="secondary" href={contact.openTableUrl} />
           </div>
         </div>
 
         <div className={styles.bottom}>
           <div className={styles.legal}>
-            <Link href="/impressum" className={styles.link}>Imprint</Link>
-            <Link href="/datenschutz" className={styles.link}>Privacy Policy</Link>
+            {/* Legal routes remain omitted until approved legal documents exist */}
+            <span>© {new Date().getFullYear()} One 8 Restobar</span>
           </div>
-          
+
           {showCredit && (
             <div className={styles.credit}>
-              <a href="https://thedot.com" target="_blank" rel="noopener noreferrer" aria-label="A digital experience by The Dot">
-                A digital experience by The Dot <span className={styles.dot} aria-hidden="true"></span>
+              <a href="https://thedot.com" target="_blank" rel="noopener noreferrer" aria-label="Website design by The Dot company">
+                Website design by The Dot company{' '}
+                <Image src="/the-dot-logo.svg" alt="The Dot logo" width={14} height={14} className={styles.dotLogo} aria-hidden="true" />
               </a>
             </div>
           )}

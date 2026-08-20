@@ -12,8 +12,8 @@ import VisitPanel from '@/components/home/VisitPanel';
 import { getExperiences } from '@/lib/cms/content-provider';
 
 export const metadata = {
-  title: 'One 8 Restobar | Düsseldorf',
-  description: 'A contemporary restobar shaped around shared plates, crafted pours and evenings that move at their own pace in Düsseldorf.',
+  title: 'One 8 Restobar',
+  description: 'A contemporary restobar shaped around shared plates, crafted pours, and evenings that move at their own pace.',
 };
 
 export default async function Home() {
@@ -22,7 +22,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <DecisionRail />
         <BrandProof />

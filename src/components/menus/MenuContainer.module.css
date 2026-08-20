@@ -2,6 +2,65 @@
   width: 100%;
 }
 
+.chapterNav {
+  background-color: var(--surface-color);
+  border: 1px solid rgba(9, 26, 42, 0.12);
+  padding: 1rem 1.5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 4px;
+}
+
+.chapterNavLabel {
+  font-family: var(--font-interface);
+  font-size: var(--type-label);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chapterNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.chapterNavLink {
+  font-family: var(--font-interface);
+  font-size: var(--type-label);
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  min-height: 44px;
+  transition: color var(--motion-ui-fast) var(--ease-out);
+}
+
+.chapterNavLink:hover {
+  color: var(--sand-500);
+}
+
+.chapterNavLink:focus-visible {
+  outline: 2px solid var(--sand-500);
+  outline-offset: 2px;
+}
+
+.chapterNavNum {
+  color: var(--mineral-700);
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
 .chapters {
   display: flex;
   flex-direction: column;
@@ -11,6 +70,7 @@
 .chapterWrapper {
   border-top: 1px solid rgba(9, 26, 42, 0.1);
   padding-top: 2rem;
+  scroll-margin-top: var(--combined-sticky-offset);
 }
 
 .chapterTitle {
@@ -20,6 +80,7 @@
   display: flex;
   align-items: baseline;
   gap: 1rem;
+  scroll-margin-top: var(--combined-sticky-offset);
 }
 
 .chapterNum {
@@ -38,4 +99,32 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+
+.backToTopWrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.backToTopLink {
+  font-family: var(--font-interface);
+  font-size: var(--type-label);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.backToTopLink:hover {
+  opacity: 0.7;
+}
+
+.backToTopLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }

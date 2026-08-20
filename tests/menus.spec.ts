@@ -47,15 +47,18 @@ test.describe('One 8 Restobar — Full HTML Menus Suite', () => {
   });
 
   test('Invalid menu slug handles gracefully', async ({ page }) => {
-    await page.goto('/menus/invalid-slug-test');
-    await expect(page.locator('text=Menu Not Found')).toBeVisible();
+    const res = await page.goto('/menus/invalid-slug-test');
+    expect(res?.status()).toBe(404);
+    await expect(page.locator('h1')).toHaveText('Page Not Found');
   });
   
   test('Unpublished drinks/wine slug handles gracefully (returns Not Found)', async ({ page }) => {
-    await page.goto('/menus/drinks');
-    await expect(page.locator('text=Menu Not Found')).toBeVisible();
+    const resDrinks = await page.goto('/menus/drinks');
+    expect(resDrinks?.status()).toBe(404);
+    await expect(page.locator('h1')).toHaveText('Page Not Found');
     
-    await page.goto('/menus/wine');
-    await expect(page.locator('text=Menu Not Found')).toBeVisible();
+    const resWine = await page.goto('/menus/wine');
+    expect(resWine?.status()).toBe(404);
+    await expect(page.locator('h1')).toHaveText('Page Not Found');
   });
 });
