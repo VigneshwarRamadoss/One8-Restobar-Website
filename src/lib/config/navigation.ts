@@ -7,11 +7,10 @@ export interface NavItem {
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/', isPublishable: true },
   { label: 'Menus', href: '/menus', isPublishable: true },
-  // Unimplemented milestone routes remain registered but marked unpublishable
-  { label: 'Experiences', href: '/experiences', isPublishable: false },
-  { label: 'Events', href: '/events', isPublishable: false },
-  { label: 'About', href: '/about', isPublishable: false },
-  { label: 'Visit', href: '/visit', isPublishable: false },
+  { label: 'Experiences', href: '/experiences', isPublishable: true },
+  { label: 'Events', href: '/events', isPublishable: true },
+  { label: 'About', href: '/about', isPublishable: true },
+  { label: 'Visit', href: '/visit', isPublishable: true },
 ];
 
 /**

@@ -1,0 +1,90 @@
+.rail {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  background: var(--paper-50);
+  border-bottom: 1px solid var(--sand-500);
+}
+
+.frame {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding-inline: var(--content-padding);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral-700);
+}
+
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-950);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mineral-700);
+}
+
+.dotOpen {
+  background: var(--success-700);
+}
+
+.value {
+  font-size: var(--type-body);
+  line-height: 1.5;
+  color: var(--ink-800);
+  margin: 0;
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-950);
+  text-decoration: underline;
+  margin-top: 0.25rem;
+}
+
+.devTag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--terracotta-600);
+  font-weight: 600;
+}
+
+.controlledState {
+  padding: 2rem;
+  background: color-mix(in srgb, var(--sand-500) 25%, transparent);
+  border: 1px solid var(--sand-500);
+  color: var(--ink-800);
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

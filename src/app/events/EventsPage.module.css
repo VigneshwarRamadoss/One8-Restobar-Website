@@ -1,0 +1,249 @@
+.page {
+  padding-top: var(--header-sticky-offset);
+  overflow: clip;
+  background: var(--paper-50);
+}
+
+.frame {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding-inline: var(--content-padding);
+}
+
+.hero {
+  position: relative;
+  min-height: min(850px, calc(100svh - var(--header-sticky-offset)));
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink-950) 20%, transparent);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(5rem, 16vw, 15rem);
+  height: 0.5rem;
+  background: var(--terracotta-600);
+}
+
+.eyebrow,
+.eyebrowDark {
+  margin: 0 0 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--mineral-700);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.55fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+}
+
+.title {
+  max-width: 10ch;
+  font-size: clamp(4.25rem, 8.3vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+}
+
+.title span {
+  display: block;
+  margin-left: clamp(1.25rem, 6vw, 6rem);
+  font-style: italic;
+  color: var(--mineral-700);
+}
+
+.introduction {
+  padding-bottom: 0.5rem;
+}
+
+.lead {
+  max-width: 32rem;
+  margin-bottom: 2rem;
+  font-size: var(--type-body-l);
+  line-height: 1.55;
+  color: var(--ink-800);
+}
+
+.anchorLink {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid currentColor;
+  font-weight: 600;
+}
+
+.anchorLink span {
+  transition: transform var(--motion-ui-fast) var(--ease-out);
+}
+
+.anchorLink:hover span {
+  transform: translateY(3px);
+}
+
+.anchorLink:focus-visible {
+  outline: 2px solid var(--ink-950);
+  outline-offset: 5px;
+}
+
+.outline {
+  list-style: none;
+  margin: clamp(4rem, 8vw, 7rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--sand-500);
+}
+
+.outline li {
+  min-height: 5.5rem;
+  padding: 1.25rem 1.5rem 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--ink-800);
+}
+
+.outline li + li {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--sand-500);
+}
+
+.outlineNumber {
+  color: var(--mineral-700);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.enquiry {
+  padding-block: var(--section-spacing);
+  background: var(--ink-950);
+  color: var(--chalk-0);
+}
+
+.enquiryGrid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: start;
+}
+
+.enquiryIntro {
+  position: sticky;
+  top: calc(var(--header-sticky-offset) + 2rem);
+}
+
+.eyebrowDark {
+  color: var(--sea-300);
+}
+
+.enquiryTitle {
+  max-width: 8ch;
+  margin-bottom: 2rem;
+  font-size: clamp(3rem, 5.6vw, 6rem);
+  line-height: 0.94;
+}
+
+.enquiryCopy {
+  max-width: 31rem;
+  color: var(--sea-300);
+  line-height: 1.65;
+}
+
+.reassurance {
+  max-width: 29rem;
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+
+.reassuranceRule {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  margin-bottom: 1.25rem;
+  background: var(--sand-500);
+}
+
+.reassurance p {
+  margin: 0;
+  color: var(--sea-300);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1023px) {
+  .page {
+    padding-top: 64px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: clamp(5rem, 13vw, 8rem);
+  }
+
+  .heroGrid,
+  .enquiryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroGrid {
+    gap: 3rem;
+  }
+
+  .title span {
+    margin-left: 0;
+  }
+
+  .enquiryIntro {
+    position: static;
+  }
+
+  .enquiryTitle {
+    max-width: 11ch;
+  }
+
+  .reassurance {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .title {
+    font-size: clamp(3.25rem, 16vw, 5rem);
+    line-height: 0.94;
+  }
+
+  .outline {
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+  }
+
+  .outline li {
+    min-height: 4rem;
+    padding: 1rem 0;
+  }
+
+  .outline li + li {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--sand-500) 55%, transparent);
+  }
+
+  .enquiryTitle {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anchorLink span {
+    transition: none;
+  }
+}

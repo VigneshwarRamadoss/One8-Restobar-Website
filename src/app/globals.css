@@ -44,6 +44,13 @@
   --text-color: var(--ink-950);
   --text-secondary: var(--ink-800);
   --surface-color: var(--chalk-0);
+
+  /* Component Aliases */
+  --color-background: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-text-primary: var(--text-color);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--text-secondary);
 }
 
 [data-theme="night"] {

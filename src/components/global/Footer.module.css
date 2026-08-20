@@ -85,7 +85,8 @@
 
 .legal {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   font-size: var(--type-label);
   color: var(--text-secondary);
 }

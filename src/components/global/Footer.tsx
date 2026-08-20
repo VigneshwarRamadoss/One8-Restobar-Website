@@ -70,7 +70,10 @@ export default async function Footer() {
 
         <div className={styles.bottom}>
           <div className={styles.legal}>
-            {/* Legal routes remain omitted until approved legal documents exist */}
+            <Link href="/privacy" className={styles.link}>Datenschutz</Link>
+            <span aria-hidden="true">|</span>
+            <Link href="/legal" className={styles.link}>Impressum</Link>
+            <span aria-hidden="true">|</span>
             <span>© {new Date().getFullYear()} One 8 Restobar</span>
           </div>
 

@@ -1,0 +1,11 @@
+.page {
+  padding-top: var(--header-sticky-offset);
+  overflow: clip;
+  background: var(--paper-50);
+}
+
+@media (max-width: 1023px) {
+  .page {
+    padding-top: 64px;
+  }
+}

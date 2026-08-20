@@ -63,7 +63,7 @@ export default function ExperienceIndex({ experiences }: Props) {
                       </div>
                     </div>
 
-                    <Link href={`/erleben/${exp.id}`} className={styles.link}>
+                    <Link href={`/experiences/${exp.id}`} className={styles.link}>
                       Discover {exp.title}
                     </Link>
                   </div>
