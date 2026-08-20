@@ -1,0 +1,39 @@
+.notice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--surface-color);
+  border-left: 3px solid var(--terracotta-600);
+  margin-bottom: 2.5rem;
+  border-radius: 2px;
+}
+
+.badge {
+  display: inline-self;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta-600);
+}
+
+.text {
+  margin: 0;
+  font-size: var(--type-label);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .notice {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .badge {
+    flex-shrink: 0;
+  }
+}

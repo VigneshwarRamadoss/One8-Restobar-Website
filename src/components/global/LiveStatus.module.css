@@ -1,0 +1,27 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-interface);
+  font-size: var(--type-label);
+  color: var(--text-color);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.success {
+  background-color: var(--success-700);
+}
+
+.neutral {
+  background-color: var(--text-secondary);
+}
+
+.label {
+  font-weight: 500;
+}

@@ -1,0 +1,95 @@
+.wrapper {
+  padding-top: calc(72px + 4rem);
+  padding-bottom: 6rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.code {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--sea-300);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--type-display-l);
+  margin: 1rem 0 0.5rem 0;
+}
+
+.description {
+  font-size: var(--type-body-l);
+  color: var(--text-secondary);
+  margin: 0 0 2.5rem 0;
+  max-width: 44ch;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.primaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 1.5rem;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-interface);
+  border-radius: 4px;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.primaryLink:hover {
+  opacity: 0.85;
+}
+
+.primaryLink:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 4px;
+}
+
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 1.5rem;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-interface);
+  border-radius: 4px;
+  transition: all var(--motion-ui-fast) var(--ease-out);
+}
+
+.secondaryLink:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.secondaryLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}

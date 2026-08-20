@@ -1,0 +1,36 @@
+.wrapper {
+  padding-top: calc(72px + 2rem);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+.header {
+  margin-bottom: 4rem;
+  max-width: 45ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--type-display-xl);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--type-body-l);
+  font-family: var(--font-display);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+}

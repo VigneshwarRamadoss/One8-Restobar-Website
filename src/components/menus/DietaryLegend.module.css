@@ -1,0 +1,44 @@
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--type-label);
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.abbr {
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  background-color: var(--surface-color);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  border: 1px solid var(--sea-300);
+}

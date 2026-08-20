@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--surface-color);
+  border: 1px dashed var(--sea-300);
+  border-radius: 4px;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--type-heading-m);
+  margin: 0 0 0.5rem 0;
+}
+
+.message {
+  font-size: var(--type-body);
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  max-width: 40ch;
+}
+
+.resetButton {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-interface);
+  font-size: var(--type-label);
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.resetButton:hover {
+  opacity: 0.85;
+}
+
+.resetButton:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 4px;
+}

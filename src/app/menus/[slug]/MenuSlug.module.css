@@ -1,0 +1,45 @@
+.wrapper {
+  padding-top: calc(72px + 2rem);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+.otherMenusNav {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--text-color);
+}
+
+.otherMenusTitle {
+  font-family: var(--font-display);
+  font-size: var(--type-heading-m);
+  margin: 0 0 1.5rem 0;
+}
+
+.otherMenusLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.otherMenuLink {
+  font-weight: 500;
+  font-size: var(--type-body);
+  color: var(--text-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.otherMenuLink:hover {
+  text-decoration: none;
+}
+
+.otherMenuLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}

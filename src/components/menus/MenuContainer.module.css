@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.chapterWrapper {
+  border-top: 1px solid rgba(9, 26, 42, 0.1);
+  padding-top: 2rem;
+}
+
+.chapterTitle {
+  font-family: var(--font-display);
+  font-size: var(--type-chapter-heading, clamp(2rem, 4.5vw, 4.75rem));
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.chapterNum {
+  color: var(--mineral-700);
+  font-size: 0.7em;
+}
+
+.chapterIntro {
+  font-size: var(--type-body-l);
+  color: var(--text-secondary);
+  max-width: 60ch;
+  margin: 0 0 3rem 0;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}

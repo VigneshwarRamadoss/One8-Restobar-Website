@@ -1,0 +1,20 @@
+.switch {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: var(--font-interface);
+  font-weight: 500;
+  font-size: var(--type-label);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.switch:hover {
+  opacity: 0.7;
+}
+
+.switch:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

@@ -1,0 +1,108 @@
+.section {
+  padding: var(--section-spacing) 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mediaFrame {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: var(--surface-color);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--type-label);
+  color: var(--text-secondary);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: var(--type-display-l);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--type-heading-m);
+  font-family: var(--font-display);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 30ch;
+}
+
+.capacityList {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--text-secondary);
+  padding-top: 1.5rem;
+}
+
+.capacityList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.capacityLabel {
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.capacityValue {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.link {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  align-self: flex-start;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    gap: 8%;
+  }
+
+  .mediaFrame {
+    flex: 1.2;
+    aspect-ratio: 16/9;
+  }
+
+  .content {
+    flex: 1;
+  }
+}

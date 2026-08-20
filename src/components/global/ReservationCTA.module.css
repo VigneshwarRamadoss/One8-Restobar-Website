@@ -1,0 +1,66 @@
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-family: var(--font-interface);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all var(--motion-ui-fast) var(--ease-out);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 4px;
+}
+
+.primary {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  padding: 0 1.5rem;
+  height: 48px;
+  border-radius: 4px; /* Restrained radius as per spec */
+}
+
+.primary:hover {
+  background-color: var(--text-secondary);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 0 1.5rem;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.secondary:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.nav {
+  color: inherit;
+  border: 1px solid currentColor;
+  padding: 0 1.25rem;
+  height: 44px; /* Minimum accessible target */
+  border-radius: 2px;
+  background: transparent;
+}
+
+.nav:hover {
+  background-color: currentColor;
+  color: var(--bg-color);
+}
+
+.unconfigured {
+  cursor: not-allowed;
+}
+
+.draftBadge {
+  font-size: 0.7em;
+  font-weight: 500;
+}

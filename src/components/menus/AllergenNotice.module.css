@@ -1,0 +1,33 @@
+.notice {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.text {
+  font-size: var(--type-body);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 65ch;
+}
+
+.draftNote {
+  font-size: 0.75rem;
+  color: var(--mineral-700);
+  font-style: italic;
+}

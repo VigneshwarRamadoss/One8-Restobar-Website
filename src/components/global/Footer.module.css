@@ -1,0 +1,146 @@
+.footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: var(--section-spacing) 0;
+  border-top: 1px solid var(--surface-color);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--type-heading-m);
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: var(--type-label);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.address p, .column p {
+  margin: 0;
+}
+
+.hoursStatus {
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  text-decoration: none;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.socials {
+  margin-top: 1rem;
+}
+
+.reserveColumn {
+  align-items: flex-start;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--surface-color);
+}
+
+.legal {
+  display: flex;
+  gap: 2rem;
+  font-size: var(--type-label);
+  color: var(--text-secondary);
+}
+
+.credit {
+  font-size: var(--type-label);
+  color: var(--text-secondary);
+}
+
+.credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+  }
+  
+  .reserveColumn {
+    align-items: flex-end;
+  }
+}
