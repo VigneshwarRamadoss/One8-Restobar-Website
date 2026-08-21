@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { isDevEnvironment } from '@/lib/cms/publication-safety';
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import styles from './AboutHero.module.css';
 
 export default function AboutHero() {
-  const isDev = isDevEnvironment();
-
   return (
     <section className={styles.hero} aria-labelledby="about-hero-title">
       <div className={styles.frame}>
@@ -36,11 +35,15 @@ export default function AboutHero() {
           </div>
 
           <div className={styles.mediaStage} aria-hidden="true">
-            <div className={styles.editorialGraphic}>
-              <span className={styles.emblem}>18</span>
-              <span className={styles.caption}>Atmosphere & Architecture</span>
-              {isDev && <span className={styles.devBadge}>[PREVIEW: Photography Pending]</span>}
-            </div>
+            <Image
+              src="/images/previsual/10-about-hero-wide.png"
+              alt=""
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              loading="lazy"
+            />
+            <PrevisualBadge />
           </div>
         </div>
       </div>

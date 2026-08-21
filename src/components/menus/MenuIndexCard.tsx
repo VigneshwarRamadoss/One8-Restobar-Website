@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import { Menu } from '@/lib/cms/content-provider';
 import styles from './MenuIndexCard.module.css';
 
@@ -37,9 +39,15 @@ export default function MenuIndexCard({ menu, index }: Props) {
       </div>
 
       <div className={styles.mediaStage} aria-hidden="true">
-        <div className={styles.placeholder}>
-          <span>Asset Required: {menu.title} Cover</span>
-        </div>
+        <Image
+          src="/images/previsual/07-menu-shared-plate.png"
+          alt=""
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 1023px) 100vw, 50vw"
+          loading="lazy"
+        />
+        <PrevisualBadge />
       </div>
     </article>
   );

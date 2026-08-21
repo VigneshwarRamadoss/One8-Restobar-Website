@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import { getCleanContact } from '@/lib/cms/publication-safety';
 import type { VenueContact } from '@/lib/cms/types';
 import styles from './ArrivalDetails.module.css';
@@ -68,35 +70,17 @@ export default function ArrivalDetails({ contact }: Props) {
           </div>
 
           {/* Right Column: Location Card preview */}
-          {hasMapsUrl ? (
-            <div className={styles.mapCard}>
-              <div className={styles.mapEmblem} aria-hidden="true">📍</div>
-              <h3 className={styles.mapTitle}>One 8 Restobar</h3>
-              <p className={styles.mapSub}>
-                {cleanContact.address ? `${cleanContact.address}, ${cleanContact.city || ''}` : 'Location Map'}
-              </p>
-              <a
-                href={cleanContact.mapsUrl!}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.mapBtn}
-              >
-                Open in Google Maps ↗
-              </a>
-              {cleanContact.isDraft && cleanContact.isDev && (
-                <span className={styles.devBadge}>[PREVIEW: Map URL Configured]</span>
-              )}
-            </div>
-          ) : (
-            <div className={styles.mapCard}>
-              <div className={styles.mapEmblem} aria-hidden="true">🏛️</div>
-              <h3 className={styles.mapTitle}>One 8 Restobar</h3>
-              <p className={styles.mapSub}>Location map will be activated upon publication.</p>
-              {cleanContact.isDev && (
-                <span className={styles.devBadge}>[PREVIEW: Awaiting Maps URL]</span>
-              )}
-            </div>
-          )}
+          <div className={styles.mediaCard}>
+            <Image
+              src="/images/previsual/11-visit-arrival.png"
+              alt=""
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              loading="lazy"
+            />
+            <PrevisualBadge />
+          </div>
         </div>
       </div>
     </section>

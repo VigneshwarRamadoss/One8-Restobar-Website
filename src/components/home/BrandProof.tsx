@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import styles from './BrandProof.module.css';
 
 export default function BrandProof() {
@@ -14,10 +16,15 @@ export default function BrandProof() {
         </div>
         
         <div className={styles.mediaFrame}>
-           {/* Shot ID: 20g_detail_evening_tactile_portrait_01 */}
-           <div className={styles.placeholder} aria-hidden="true">
-             <span>Asset Required: Tactile Detail (Portrait)</span>
-           </div>
+           <Image
+             src="/images/previsual/02-brand-proof-portrait.png"
+             alt="A server sets a water glass beside a shared plate."
+             fill
+             style={{ objectFit: 'cover' }}
+             sizes="(max-width: 767px) 100vw, 50vw"
+             loading="lazy"
+           />
+           <PrevisualBadge />
         </div>
       </div>
     </section>

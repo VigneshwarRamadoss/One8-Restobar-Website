@@ -1,8 +1,8 @@
-import { isDevEnvironment } from '@/lib/cms/publication-safety';
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import styles from './CraftStory.module.css';
 
 export default function CraftStory() {
-  const isDev = isDevEnvironment();
 
   return (
     <section className={styles.section} aria-labelledby="craft-story-title" data-theme="night">
@@ -24,19 +24,27 @@ export default function CraftStory() {
 
         <div className={styles.diptych} aria-hidden="true">
           <div className={`${styles.mediaFrame} ${styles.portrait}`}>
-            <div className={styles.graphicContent}>
-              <span className={styles.graphicTitle}>The Hearth</span>
-              <span className={styles.graphicSub}>Kitchen & Process</span>
-              {isDev && <span className={styles.devBadge}>[PREVIEW: Kitchen Imagery Pending]</span>}
-            </div>
+            <Image
+              src="/images/previsual/12-about-craft-reference.png"
+              alt="Detail shot of hands preparing a dish, highlighting culinary craft, steam, ceramic and metal"
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              loading="lazy"
+            />
+            <PrevisualBadge />
           </div>
 
           <div className={`${styles.mediaFrame} ${styles.detail}`}>
-            <div className={styles.graphicContent}>
-              <span className={styles.graphicTitle}>The Detail</span>
-              <span className={styles.graphicSub}>Plating & Finish</span>
-              {isDev && <span className={styles.devBadge}>[PREVIEW: Detail Imagery Pending]</span>}
-            </div>
+            <Image
+              src="/images/previsual/09-kitchen-process-detail.png"
+              alt=""
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 1023px) 100vw, 33vw"
+              loading="lazy"
+            />
+            <PrevisualBadge />
           </div>
         </div>
       </div>

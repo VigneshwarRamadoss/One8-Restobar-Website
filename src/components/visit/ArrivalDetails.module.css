@@ -92,69 +92,13 @@
   margin-top: 0.5rem;
 }
 
-.mapCard {
+.mediaCard {
   position: relative;
   aspect-ratio: 4 / 3;
   width: 100%;
   background: var(--chalk-0);
   border: 1px solid var(--sand-500);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2.5rem;
-}
-
-.mapEmblem {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--sand-500);
-  margin-bottom: 1rem;
-}
-
-.mapTitle {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--ink-950);
-  margin-bottom: 0.5rem;
-}
-
-.mapSub {
-  font-size: 0.875rem;
-  color: var(--mineral-700);
-  margin-bottom: 1.75rem;
-}
-
-.mapBtn {
-  min-height: 44px;
-  padding-inline: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: var(--ink-950);
-  color: var(--chalk-0);
-  font-family: var(--font-interface);
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color var(--motion-ui-fast) var(--ease-out);
-}
-
-.mapBtn:hover {
-  background: var(--ink-800);
-}
-
-.mapBtn:focus-visible {
-  outline: 2px solid var(--ink-950);
-  outline-offset: 4px;
-}
-
-.devBadge {
-  margin-top: 0.75rem;
-  font-size: 0.6875rem;
-  color: var(--terracotta-600);
+  overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -163,7 +107,7 @@
     gap: 3rem;
   }
 
-  .mapCard {
+  .mediaCard {
     aspect-ratio: 16 / 10;
   }
 }

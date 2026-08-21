@@ -2,8 +2,17 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Experience } from '@/lib/cms/content-provider';
+import PrevisualBadge from '../global/PrevisualBadge';
 import styles from './ExperienceIndex.module.css';
+
+const imageMap: Record<string, string> = {
+  'dining': '03-experience-dining.png',
+  'bar': '04-experience-bar.png',
+  'terrace': '05-experience-terrace.png',
+  'private-events': '06-events-private-lounge.png',
+};
 
 interface Props {
   experiences: Experience[];
@@ -22,16 +31,25 @@ export default function ExperienceIndex({ experiences }: Props) {
         <div className={styles.grid}>
           {/* Desktop Media Stage */}
           <div className={styles.mediaStage} aria-hidden="true">
-            {experiences.map((exp, index) => (
-              <div 
-                key={`media-${exp.id}`}
-                className={`${styles.mediaLayer} ${index === activeIndex ? styles.active : ''}`}
-              >
-                <div className={styles.placeholder}>
-                   <span>Asset Required: {exp.title} (Focal Crop)</span>
+            {experiences.map((exp, index) => {
+              const imageName = imageMap[exp.id] || '03-experience-dining.png';
+              return (
+                <div 
+                  key={`media-${exp.id}`}
+                  className={`${styles.mediaLayer} ${index === activeIndex ? styles.active : ''}`}
+                >
+                  <Image
+                    src={`/images/previsual/${imageName}`}
+                    alt=""
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    loading="lazy"
+                  />
+                  {index === activeIndex && <PrevisualBadge />}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className={styles.list}>
@@ -58,9 +76,15 @@ export default function ExperienceIndex({ experiences }: Props) {
                     
                     {/* Mobile Media (hidden on desktop) */}
                     <div className={styles.mobileMedia} aria-hidden="true">
-                      <div className={styles.placeholder}>
-                        <span>Asset Required: {exp.title} (Compact Crop)</span>
-                      </div>
+                      <Image
+                        src={`/images/previsual/${imageMap[exp.id] || '03-experience-dining.png'}`}
+                        alt=""
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 1023px) 100vw, 50vw"
+                        loading="lazy"
+                      />
+                      <PrevisualBadge />
                     </div>
 
                     <Link href={`/experiences/${exp.id}`} className={styles.link}>

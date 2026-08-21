@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import ReservationCTA from '../global/ReservationCTA';
 import styles from './Hero.module.css';
 
@@ -11,9 +13,15 @@ export default function Hero() {
         Shot ID: 20g_venue_evening_hero_wide_01
       */}
       <div className={styles.mediaStage}>
-        <div className={styles.placeholder} aria-hidden="true">
-          <span>Asset Required: Signature Hero Moment (Wide/Portrait)</span>
-        </div>
+        <Image
+          src="/images/previsual/01-home-hero-wide.png"
+          alt=""
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="100vw"
+          preload={true}
+        />
+        <PrevisualBadge />
         {/* Optional 20 degree reveal clip applied in CSS */}
         <div className={styles.mask} />
       </div>

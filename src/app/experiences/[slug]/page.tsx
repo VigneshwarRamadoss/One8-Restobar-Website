@@ -1,11 +1,20 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Header from '@/components/global/Header';
 import Footer from '@/components/global/Footer';
+import PrevisualBadge from '@/components/global/PrevisualBadge';
 import ReservationCTA from '@/components/global/ReservationCTA';
 import { getExperiences } from '@/lib/cms/content-provider';
 import { isContentPublishable } from '@/lib/cms/publication-policy';
 import styles from './ExperienceDetail.module.css';
+
+const imageMap: Record<string, string> = {
+  'dining': '03-experience-dining.png',
+  'bar': '04-experience-bar.png',
+  'terrace': '05-experience-terrace.png',
+  'private-events': '06-events-private-lounge.png',
+};
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -58,9 +67,14 @@ export default async function ExperienceDetailPage({ params }: Props) {
             <p className={styles.promise}>{experience.description}</p>
           </div>
           <div className={styles.heroMedia} aria-hidden="true">
-            <div className={styles.placeholder}>
-              <span>Asset Required: {experience.title} (Hero)</span>
-            </div>
+            <Image
+              src={`/images/previsual/${imageMap[experience.id] || '03-experience-dining.png'}`}
+              alt=""
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="100vw"
+            />
+            <PrevisualBadge />
           </div>
         </section>
 

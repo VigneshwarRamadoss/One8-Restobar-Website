@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import styles from './CocinaFeature.module.css';
 
 export default function CocinaFeature() {
@@ -16,15 +18,27 @@ export default function CocinaFeature() {
         <div className={styles.diptych}>
           {/* Shot ID: 20g_kitchen_portrait_action_01 */}
           <div className={`${styles.mediaFrame} ${styles.portrait}`}>
-             <div className={styles.placeholder} aria-hidden="true">
-               <span>Asset Required: Kitchen Team / Process (Portrait)</span>
-             </div>
+             <Image
+               src="/images/previsual/08-kitchen-plating-portrait.png"
+               alt="A cook finishes a plate at the kitchen pass."
+               fill
+               style={{ objectFit: 'cover' }}
+               sizes="(max-width: 767px) 100vw, 50vw"
+               loading="lazy"
+             />
+             <PrevisualBadge />
           </div>
           {/* Shot ID: 20g_kitchen_action_detail_02 */}
           <div className={`${styles.mediaFrame} ${styles.detail}`}>
-             <div className={styles.placeholder} aria-hidden="true">
-               <span>Asset Required: Process Detail</span>
-             </div>
+             <Image
+               src="/images/previsual/09-kitchen-process-detail.png"
+               alt=""
+               fill
+               style={{ objectFit: 'cover' }}
+               sizes="(max-width: 767px) 100vw, 33vw"
+               loading="lazy"
+             />
+             <PrevisualBadge />
           </div>
         </div>
       </div>

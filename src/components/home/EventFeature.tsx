@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import styles from './EventFeature.module.css';
 
 export default function EventFeature() {
@@ -6,10 +8,15 @@ export default function EventFeature() {
     <section className={styles.section} aria-labelledby="events-feature-title">
       <div className={styles.container}>
         <div className={styles.mediaFrame}>
-          {/* Shot ID: 20g_events_group_setup_wide_01 */}
-          <div className={styles.placeholder} aria-hidden="true">
-            <span>Asset Required: Private Dining / Group Setup (Wide/Medium)</span>
-          </div>
+          <Image
+            src="/images/previsual/06-events-private-lounge.png"
+            alt="Staff prepare a private dining table before an event."
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            loading="lazy"
+          />
+          <PrevisualBadge />
         </div>
 
         <div className={styles.content}>

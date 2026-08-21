@@ -85,10 +85,12 @@
 }
 
 .mobileMedia {
+  position: relative;
   width: 100%;
   aspect-ratio: 4/5;
-  background-color: var(--bg-color);
+  background-color: var(--chalk-0);
   margin: 1rem 0;
+  overflow: hidden;
 }
 
 .placeholder {
@@ -134,12 +136,21 @@
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity var(--motion-reveal) var(--ease-out);
+    clip-path: inset(10% 0 0 0);
+    transition: opacity 800ms var(--ease-out), clip-path 800ms var(--ease-out);
     pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mediaLayer {
+      transition: opacity 800ms var(--ease-out);
+      clip-path: none;
+    }
   }
 
   .mediaLayer.active {
     opacity: 1;
+    clip-path: inset(0 0 0 0);
   }
 
   .list {

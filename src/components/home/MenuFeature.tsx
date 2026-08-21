@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import PrevisualBadge from '../global/PrevisualBadge';
 import { getMenu, formatPrice } from '@/lib/cms/content-provider';
 import styles from './MenuFeature.module.css';
 
@@ -46,10 +48,15 @@ export default async function MenuFeature() {
           </div>
 
           <div className={styles.mediaFrame}>
-            {/* Shot ID: 20g_menu_detail_dish_square_01 */}
-            <div className={styles.placeholder} aria-hidden="true">
-              <span>Asset Required: Hero Dish (Square)</span>
-            </div>
+            <Image
+              src="/images/previsual/07-menu-shared-plate.png"
+              alt=""
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              loading="lazy"
+            />
+            <PrevisualBadge />
           </div>
         </div>
       </div>
