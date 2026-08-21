@@ -68,8 +68,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-padding-top: var(--combined-sticky-offset);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(:target) {
+    scroll-behavior: smooth;
+  }
 }
 
 *, *::before, *::after {

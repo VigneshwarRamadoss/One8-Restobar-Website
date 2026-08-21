@@ -28,6 +28,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Ensure route changes and refreshes always start cleanly at the top of the page
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.history.scrollRestoration = 'manual';
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [pathname]);
+
   // Body scroll lock & focus management when mobile menu opens/closes
   useEffect(() => {
     if (isMobileMenuOpen) {
