@@ -12,9 +12,10 @@ export default function EventFeature() {
             src="/images/previsual/06-events-private-lounge.png"
             alt="Staff prepare a private dining table before an event."
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: '52% 50%' }}
             sizes="(max-width: 1023px) 100vw, 50vw"
             loading="lazy"
+            quality={88}
           />
           <PrevisualBadge />
         </div>

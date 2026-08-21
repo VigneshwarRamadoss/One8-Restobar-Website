@@ -14,6 +14,13 @@ const imageMap: Record<string, string> = {
   'private-events': '06-events-private-lounge.png',
 };
 
+const focalPointMap: Record<string, string> = {
+  'dining': '52% 50%',
+  'bar': '50% 50%',
+  'terrace': '48% 50%',
+  'private-events': '58% 50%',
+};
+
 interface Props {
   experiences: Experience[];
 }
@@ -42,9 +49,10 @@ export default function ExperienceIndex({ experiences }: Props) {
                     src={`/images/previsual/${imageName}`}
                     alt=""
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: focalPointMap[exp.id] || '50% 50%' }}
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     loading="lazy"
+                    quality={88}
                   />
                   {index === activeIndex && <PrevisualBadge />}
                 </div>
@@ -80,9 +88,10 @@ export default function ExperienceIndex({ experiences }: Props) {
                         src={`/images/previsual/${imageMap[exp.id] || '03-experience-dining.png'}`}
                         alt=""
                         fill
-                        style={{ objectFit: 'cover' }}
+                        style={{ objectFit: 'cover', objectPosition: focalPointMap[exp.id] || '50% 50%' }}
                         sizes="(max-width: 1023px) 100vw, 50vw"
                         loading="lazy"
+                        quality={88}
                       />
                       <PrevisualBadge />
                     </div>

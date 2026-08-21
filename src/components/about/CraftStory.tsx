@@ -28,9 +28,10 @@ export default function CraftStory() {
               src="/images/previsual/12-about-craft-reference.png"
               alt="Detail shot of hands preparing a dish, highlighting culinary craft, steam, ceramic and metal"
               fill
-              style={{ objectFit: 'cover' }}
-              sizes="(max-width: 1023px) 100vw, 50vw"
+              style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
+              sizes="(max-width: 1199px) 100vw, 50vw"
               loading="lazy"
+              quality={88}
             />
             <PrevisualBadge />
           </div>
@@ -40,9 +41,10 @@ export default function CraftStory() {
               src="/images/previsual/09-kitchen-process-detail.png"
               alt=""
               fill
-              style={{ objectFit: 'cover' }}
-              sizes="(max-width: 1023px) 100vw, 33vw"
+              style={{ objectFit: 'cover', objectPosition: '58% 50%' }}
+              sizes="(max-width: 1199px) 100vw, 40vw"
               loading="lazy"
+              quality={88}
             />
             <PrevisualBadge />
           </div>

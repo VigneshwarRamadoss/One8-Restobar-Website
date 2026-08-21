@@ -17,7 +17,7 @@ export default function ArrivalDetails({ contact }: Props) {
   return (
     <section className={styles.section} aria-labelledby="arrival-title">
       <div className={styles.frame}>
-        <div className={`${styles.grid} ${!hasMapsUrl && !hasAddress ? styles.gridSingle : ''}`}>
+        <div className={styles.grid}>
           <div>
             <div className={styles.header}>
               <p className={styles.eyebrow}>Location & Arrival</p>
@@ -75,9 +75,10 @@ export default function ArrivalDetails({ contact }: Props) {
               src="/images/previsual/11-visit-arrival.png"
               alt=""
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: '54% 50%' }}
               sizes="(max-width: 1023px) 100vw, 50vw"
               loading="lazy"
+              quality={88}
             />
             <PrevisualBadge />
           </div>

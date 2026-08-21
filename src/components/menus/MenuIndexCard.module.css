@@ -84,6 +84,8 @@
 }
 
 .mediaStage {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 16/9;
   background-color: var(--surface-color);

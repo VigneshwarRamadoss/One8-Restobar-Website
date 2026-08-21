@@ -12,7 +12,7 @@ export default function PrevisualBadge() {
       aria-hidden="true" 
       style={{ pointerEvents: 'none' }}
     >
-      PREVISUALISATION — REPLACE WITH CLIENT PHOTOGRAPHY
+      PREVISUAL — CLIENT PHOTO REQUIRED
     </div>
   );
 }

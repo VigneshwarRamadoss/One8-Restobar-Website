@@ -16,6 +16,20 @@ const imageMap: Record<string, string> = {
   'private-events': '06-events-private-lounge.png',
 };
 
+const detailImageMap: Record<string, string> = {
+  'dining': '07-menu-shared-plate.png',
+  'bar': '04-experience-bar.png',
+  'terrace': '05-experience-terrace.png',
+  'private-events': '06-events-private-lounge.png',
+};
+
+const focalPointMap: Record<string, string> = {
+  'dining': '52% 50%',
+  'bar': '50% 50%',
+  'terrace': '48% 50%',
+  'private-events': '58% 50%',
+};
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -57,24 +71,25 @@ export default async function ExperienceDetailPage({ params }: Props) {
     <>
       <Header />
       <main id="main-content" className={styles.main}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.title}>
-              {experience.title}
-              {experience.isDraft && <span className={styles.draftBadge}>[DRAFT]</span>}
-            </h1>
-            <p className={styles.promise}>{experience.description}</p>
-          </div>
+        <section className={styles.hero} aria-labelledby="experience-title">
           <div className={styles.heroMedia} aria-hidden="true">
             <Image
               src={`/images/previsual/${imageMap[experience.id] || '03-experience-dining.png'}`}
               alt=""
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: focalPointMap[experience.id] || '50% 50%' }}
               sizes="100vw"
+              preload={true}
+              quality={88}
             />
             <PrevisualBadge />
+          </div>
+          <div className={styles.heroContent}>
+            <h1 id="experience-title" className={styles.title}>
+              {experience.title}
+              {experience.isDraft && <span className={styles.draftBadge}>[DRAFT]</span>}
+            </h1>
+            <p className={styles.promise}>{experience.description}</p>
           </div>
         </section>
 
@@ -96,7 +111,6 @@ export default async function ExperienceDetailPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Editorial Scene & Gallery (Placeholders) */}
         <section className={styles.editorial}>
           <div className={styles.editorialContent}>
             <h2>Atmosphere & Concept</h2>
@@ -104,10 +118,17 @@ export default async function ExperienceDetailPage({ params }: Props) {
               This is a structural placeholder for the editorial scene paragraph. Real-life imagery and deeper narrative about {experience.title} will be populated here.
             </p>
           </div>
-          <div className={styles.gallery}>
-            <div className={styles.placeholderGallery}>
-              <span>Asset Required: Gallery images</span>
-            </div>
+          <div className={styles.gallery} aria-hidden="true">
+            <Image
+              src={`/images/previsual/${detailImageMap[experience.id] || '07-menu-shared-plate.png'}`}
+              alt=""
+              fill
+              style={{ objectFit: 'cover', objectPosition: focalPointMap[experience.id] || '50% 50%' }}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              loading="lazy"
+              quality={88}
+            />
+            <PrevisualBadge />
           </div>
         </section>
 

@@ -43,9 +43,10 @@ export default function MenuIndexCard({ menu, index }: Props) {
           src="/images/previsual/07-menu-shared-plate.png"
           alt=""
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', objectPosition: '58% 50%' }}
           sizes="(max-width: 1023px) 100vw, 50vw"
           loading="lazy"
+          quality={88}
         />
         <PrevisualBadge />
       </div>

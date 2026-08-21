@@ -23,6 +23,7 @@ export default function BrandProof() {
              style={{ objectFit: 'cover' }}
              sizes="(max-width: 767px) 100vw, 50vw"
              loading="lazy"
+             quality={88}
            />
            <PrevisualBadge />
         </div>

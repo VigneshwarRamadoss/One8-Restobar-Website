@@ -20,6 +20,11 @@
   overflow: hidden;
 }
 
+.heroImage {
+  object-fit: cover;
+  object-position: 64% 50%;
+}
+
 .placeholder {
   width: 100%;
   height: 100%;
@@ -107,5 +112,11 @@
   .actions {
     margin-top: 0;
     margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroImage {
+    object-position: 61% 50%;
   }
 }

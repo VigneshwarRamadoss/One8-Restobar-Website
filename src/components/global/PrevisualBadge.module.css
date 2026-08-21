@@ -1,16 +1,19 @@
 .badge {
   position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  background: color-mix(in srgb, var(--ink-950) 80%, transparent);
+  bottom: clamp(0.35rem, 1vw, 0.5rem);
+  right: clamp(0.35rem, 1vw, 0.5rem);
+  max-width: calc(100% - 0.7rem);
+  background: color-mix(in srgb, var(--ink-950) 86%, transparent);
   color: var(--chalk-0);
-  padding: 0.25rem 0.5rem;
+  padding: 0.22rem 0.42rem;
   font-family: var(--font-interface);
-  font-size: 0.625rem;
+  font-size: clamp(0.48rem, 1.4vw, 0.6rem);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: right;
   z-index: 10;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
   border-radius: 2px;
 }

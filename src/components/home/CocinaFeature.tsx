@@ -22,9 +22,10 @@ export default function CocinaFeature() {
                src="/images/previsual/08-kitchen-plating-portrait.png"
                alt="A cook finishes a plate at the kitchen pass."
                fill
-               style={{ objectFit: 'cover' }}
-               sizes="(max-width: 767px) 100vw, 50vw"
+               style={{ objectFit: 'cover', objectPosition: '50% 56%' }}
+               sizes="(max-width: 1023px) 100vw, 50vw"
                loading="lazy"
+               quality={88}
              />
              <PrevisualBadge />
           </div>
@@ -34,9 +35,10 @@ export default function CocinaFeature() {
                src="/images/previsual/09-kitchen-process-detail.png"
                alt=""
                fill
-               style={{ objectFit: 'cover' }}
-               sizes="(max-width: 767px) 100vw, 33vw"
+               style={{ objectFit: 'cover', objectPosition: '58% 50%' }}
+               sizes="(max-width: 1023px) 100vw, 33vw"
                loading="lazy"
+               quality={88}
              />
              <PrevisualBadge />
           </div>

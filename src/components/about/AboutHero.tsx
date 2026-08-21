@@ -39,9 +39,10 @@ export default function AboutHero() {
               src="/images/previsual/10-about-hero-wide.png"
               alt=""
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: '48% 50%' }}
               sizes="(max-width: 1023px) 100vw, 50vw"
               loading="lazy"
+              quality={88}
             />
             <PrevisualBadge />
           </div>

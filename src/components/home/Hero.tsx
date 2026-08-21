@@ -17,9 +17,10 @@ export default function Hero() {
           src="/images/previsual/01-home-hero-wide.png"
           alt=""
           fill
-          style={{ objectFit: 'cover' }}
+          className={styles.heroImage}
           sizes="100vw"
           preload={true}
+          quality={88}
         />
         <PrevisualBadge />
         {/* Optional 20 degree reveal clip applied in CSS */}
