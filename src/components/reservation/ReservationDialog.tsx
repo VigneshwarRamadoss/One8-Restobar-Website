@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { ReservationConfig } from '@/lib/reservation/reservation-config';
 import { checkAvailability, TimeSlot, ReservationBookingResult } from '@/lib/reservation/reservation-provider';
@@ -34,9 +34,11 @@ export default function ReservationDialog({ isOpen, onClose, initialConfig }: Pr
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(
+    () => () => undefined,
+    () => true,
+    () => false,
+  );
 
   const [details, setDetails] = useState<Partial<BookingDetails>>({
     date: new Date().toISOString().split('T')[0],

@@ -164,9 +164,11 @@ export async function createReservation(
 }
 
 export async function modifyReservation(
-  _reference: string,
-  _input: Partial<CompleteReservationInput>
+  reference: string,
+  input: Partial<CompleteReservationInput>
 ): Promise<ReservationBookingResult> {
+  void reference;
+  void input;
   const config = getReservationConfig();
   if (!config.supportsModify) {
     return {
@@ -184,8 +186,9 @@ export async function modifyReservation(
 }
 
 export async function cancelReservation(
-  _reference: string
+  reference: string
 ): Promise<{ success: boolean; message: string }> {
+  void reference;
   const config = getReservationConfig();
   if (!config.supportsCancel) {
     return {
