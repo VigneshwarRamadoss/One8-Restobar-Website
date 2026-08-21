@@ -67,13 +67,20 @@
 
 .title {
   margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-xl);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
 
 .subtitle {
   font-size: var(--type-heading-m);
-  font-family: var(--font-display);
+  font-family: var(--font-interface);
+  font-weight: 400;
   margin: 0;
-  max-width: 24ch;
+  max-width: 28ch;
+  color: var(--mineral-300);
 }
 
 .actions {

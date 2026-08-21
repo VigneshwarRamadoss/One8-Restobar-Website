@@ -1,8 +1,8 @@
 .section {
   padding-block: var(--section-spacing);
-  background: var(--paper-50);
-  color: var(--ink-950);
-  border-bottom: 1px solid color-mix(in srgb, var(--ink-950) 15%, transparent);
+  background: var(--surface-charcoal);
+  color: var(--chalk-0);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .frame {
@@ -26,23 +26,26 @@
 
 .eyebrow {
   margin: 0;
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 3.75rem);
   line-height: 0.98;
   letter-spacing: -0.03em;
+  color: var(--chalk-0);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--sand-500);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .row {
@@ -50,33 +53,35 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--sand-500) 60%, transparent);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .todayRow {
-  background: color-mix(in srgb, var(--sand-500) 18%, transparent);
+  background: var(--surface-elevated);
   padding-inline: 1rem;
   margin-inline: -1rem;
+  border-radius: 2px;
 }
 
 .day {
   font-family: var(--font-interface);
   font-size: var(--type-body);
   font-weight: 500;
-  color: var(--ink-950);
+  color: var(--chalk-0);
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
 .todayBadge {
+  font-family: var(--font-interface);
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.2rem 0.5rem;
-  background: var(--ink-950);
-  color: var(--chalk-0);
+  background: var(--sand-500);
+  color: var(--ink-1000);
   border-radius: 2px;
 }
 
@@ -85,14 +90,15 @@
   font-family: var(--font-interface);
   font-size: var(--type-body);
   font-weight: 500;
-  color: var(--ink-800);
+  color: var(--sand-300);
   font-variant-numeric: tabular-nums;
 }
 
 .note {
   margin-top: 2rem;
+  font-family: var(--font-interface);
   font-size: 0.875rem;
-  color: var(--mineral-700);
+  color: var(--mineral-300);
 }
 
 .devBadge {

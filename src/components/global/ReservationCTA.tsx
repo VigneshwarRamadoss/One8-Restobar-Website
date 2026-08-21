@@ -20,7 +20,7 @@ export default function ReservationCTA({ className = '', variant = 'primary', hr
         aria-label="Reserve a table (Configuration required)"
         title="Reservation link is unconfigured in development mode"
       >
-        Reserve a table <span className={styles.draftBadge}>[DRAFT]</span>
+        Reserve a table
       </button>
     );
   }

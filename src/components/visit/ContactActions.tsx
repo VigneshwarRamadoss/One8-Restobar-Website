@@ -35,7 +35,6 @@ export default function ContactActions({ contact }: Props) {
             ) : (
               <p className={styles.description}>
                 Direct telephone line details available upon booking confirmation.
-                {cleanContact.isDev && <span className={styles.devBadge}> [DRAFT: Phone Pending]</span>}
               </p>
             )}
           </div>
@@ -54,7 +53,6 @@ export default function ContactActions({ contact }: Props) {
             ) : (
               <p className={styles.description}>
                 Email channel details available upon grand opening announcement.
-                {cleanContact.isDev && <span className={styles.devBadge}> [DRAFT: Email Pending]</span>}
               </p>
             )}
           </div>

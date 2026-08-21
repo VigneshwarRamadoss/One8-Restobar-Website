@@ -3,11 +3,11 @@
   flex-direction: column;
   gap: 2rem;
   padding: 3rem 0;
-  border-top: 1px solid var(--text-color);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .card:last-child {
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .number {
@@ -15,7 +15,7 @@
   font-size: var(--type-label);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-  color: var(--text-secondary);
+  color: var(--sand-300);
 }
 
 .content {
@@ -29,8 +29,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--text-secondary);
+  color: var(--mineral-300);
 }
 
 .service {
@@ -40,23 +41,25 @@
 .title {
   font-family: var(--font-display);
   font-size: var(--type-display-l);
+  line-height: 1.0;
   margin: 0;
 }
 
 .titleLink {
-  color: var(--text-color);
+  color: var(--chalk-0);
   text-decoration: none;
-  transition: opacity var(--motion-ui-fast) var(--ease-out);
+  transition: color var(--motion-ui-fast) var(--ease-out);
 }
 
 .titleLink:hover {
-  opacity: 0.75;
+  color: var(--sand-300);
 }
 
 .description {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
-  color: var(--text-secondary);
-  line-height: 1.4;
+  color: var(--mineral-300);
+  line-height: 1.5;
   margin: 0;
   max-width: 45ch;
 }
@@ -66,20 +69,21 @@
 }
 
 .actionLink {
+  font-family: var(--font-interface);
   font-weight: 500;
   font-size: var(--type-body);
-  color: var(--text-color);
+  color: var(--chalk-0);
   text-decoration: underline;
   text-underline-offset: 4px;
-  transition: opacity var(--motion-ui-fast) var(--ease-out);
+  transition: color var(--motion-ui-fast) var(--ease-out);
 }
 
 .actionLink:hover {
-  text-decoration: none;
+  color: var(--sand-300);
 }
 
 .actionLink:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }
 
@@ -88,7 +92,7 @@
   overflow: hidden;
   width: 100%;
   aspect-ratio: 16/9;
-  background-color: var(--surface-color);
+  background-color: var(--surface-elevated);
 }
 
 .placeholder {

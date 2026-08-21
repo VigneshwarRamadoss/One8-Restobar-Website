@@ -1,7 +1,7 @@
 .section {
   padding: var(--section-spacing) 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--surface-warm);
+  color: var(--chalk-0);
 }
 
 .container {
@@ -24,12 +24,17 @@
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: var(--type-display-l);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--chalk-0);
 }
 
 .meta {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--text-secondary);
+  color: var(--sand-300);
   font-weight: 500;
   margin: 0;
 }
@@ -41,24 +46,27 @@
 }
 
 .link {
+  font-family: var(--font-interface);
   font-weight: 500;
+  color: var(--chalk-0);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .link:hover {
-  text-decoration: none;
+  color: var(--sand-300);
 }
 
 .downloadLink {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--text-secondary);
+  color: var(--mineral-300);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .downloadLink:hover {
-  color: var(--text-color);
+  color: var(--chalk-0);
 }
 
 .layout {
@@ -74,9 +82,10 @@
 .categoryTitle {
   font-size: var(--type-heading-m);
   font-family: var(--font-display);
+  color: var(--chalk-0);
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--text-secondary);
+  border-bottom: 1px solid var(--border-strong);
 }
 
 .menuList {
@@ -99,14 +108,17 @@
 
 .itemName {
   grid-area: name;
+  font-family: var(--font-interface);
   font-weight: 500;
   font-size: var(--type-body-l);
+  color: var(--chalk-0);
   margin: 0;
 }
 
 .dietary {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--text-secondary);
+  color: var(--sand-300);
   margin-left: 0.5rem;
   font-weight: 400;
 }
@@ -114,13 +126,16 @@
 .itemDesc {
   grid-area: desc;
   margin: 0;
-  color: var(--text-secondary);
+  font-family: var(--font-interface);
+  color: var(--mineral-300);
 }
 
 .itemPrice {
   grid-area: price;
   margin: 0;
-  font-weight: 500;
+  font-family: var(--font-interface);
+  font-weight: 600;
+  color: var(--sand-300);
   font-variant-numeric: tabular-nums;
 }
 

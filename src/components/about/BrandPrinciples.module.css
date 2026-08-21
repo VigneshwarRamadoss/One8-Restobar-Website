@@ -1,7 +1,7 @@
 .section {
   padding-block: var(--section-spacing);
-  background: var(--paper-50);
-  color: var(--ink-950);
+  background: var(--surface-charcoal);
+  color: var(--chalk-0);
 }
 
 .frame {
@@ -16,23 +16,26 @@
 
 .eyebrow {
   margin: 0 0 1rem;
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 3.75rem);
   line-height: 0.98;
   letter-spacing: -0.03em;
+  color: var(--chalk-0);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--sand-500);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .item {
@@ -41,7 +44,7 @@
 
 .item + .item {
   padding-left: clamp(1.5rem, 3vw, 2.5rem);
-  border-left: 1px solid var(--sand-500);
+  border-left: 1px solid var(--border-subtle);
 }
 
 .itemHeader {
@@ -55,19 +58,22 @@
   font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--mineral-700);
+  color: var(--sand-300);
   font-variant-numeric: tabular-nums;
 }
 
 .itemTitle {
+  font-family: var(--font-display);
   font-size: var(--type-heading-m);
   line-height: 1.1;
+  color: var(--chalk-0);
 }
 
 .paragraph {
+  font-family: var(--font-interface);
   font-size: var(--type-body);
   line-height: 1.6;
-  color: var(--ink-800);
+  color: var(--mineral-300);
   margin: 0;
 }
 

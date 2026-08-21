@@ -1,6 +1,6 @@
 .section {
   padding-block: var(--section-spacing);
-  background: var(--ink-950);
+  background: var(--surface-page);
   color: var(--chalk-0);
 }
 
@@ -20,23 +20,27 @@
 
 .eyebrow {
   margin: 0 0 1rem;
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--sea-300);
+  color: var(--sand-300);
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: clamp(3rem, 5.5vw, 5.5rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
+  color: var(--chalk-0);
 }
 
 .lead {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
   line-height: 1.6;
-  color: var(--sea-300);
+  color: var(--mineral-300);
   max-width: 32rem;
   margin: 0;
 }
@@ -50,8 +54,8 @@
 
 .mediaFrame {
   position: relative;
-  background: var(--ink-800);
-  border: 1px solid var(--sea-300);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
   overflow: hidden;
   display: flex;
   align-items: center;

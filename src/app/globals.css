@@ -1,70 +1,105 @@
 :root {
-  /* Color Palette */
-  --ink-950: #091A2A;
-  --ink-800: #17344A;
-  --mineral-700: #38586B;
-  --sea-300: #AFC8C8;
-  --sand-500: #B69B76;
-  --terracotta-600: #A84F36;
-  --paper-50: #F5F0E7;
-  --chalk-0: #FFFDF8;
-  --ember-900: #2A1712;
-  --success-700: #276445;
-  --error-700: #9A302A;
+  /* Restobar Palette Foundation */
+  --ink-1000: #03090e;
+  --ink-950: #06131d;
+  --ink-900: #0a1b27;
+  --ink-850: #10232e;
+  --charcoal-900: #15191b;
+  --espresso-900: #211612;
+  --oxblood-900: #2b1515;
+
+  --paper-50: #f4efe6;
+  --paper-100: #ebe2d5;
+  --chalk-0: #fffaf2;
+
+  --mineral-300: #b9c2c3;
+  --mineral-500: #879497;
+  --mineral-700: #526064;
+
+  --sand-300: #d8bb8c;
+  --sand-500: #b98a55;
+  --amber-500: #b8763d;
+
+  --danger-400: #e58a78;
+  --success-400: #87aa94;
+
+  /* Semantic Restobar Tokens */
+  --surface-page: var(--ink-950);
+  --surface-elevated: var(--ink-900);
+  --surface-warm: var(--espresso-900);
+  --surface-accent: var(--oxblood-900);
+  --surface-charcoal: var(--charcoal-900);
+  --surface-deepest: var(--ink-1000);
+
+  --text-primary: var(--chalk-0);
+  --text-secondary: var(--mineral-300);
+  --text-accent: var(--sand-300);
+  --text-muted: var(--mineral-500);
+
+  --border-subtle: rgba(244, 239, 230, 0.16);
+  --border-strong: rgba(244, 239, 230, 0.35);
+  --overlay-image: rgba(3, 9, 14, 0.48);
 
   /* Typography Scales */
-  --type-display-xl: clamp(3.5rem, 9vw, 9rem);
-  --type-display-l: clamp(3rem, 6.5vw, 6.5rem);
-  --type-heading-m: clamp(1.5rem, 2.4vw, 2.5rem);
-  --type-body-l: clamp(1.125rem, 1.4vw, 1.375rem);
-  --type-body: clamp(1rem, .96rem + .2vw, 1.125rem);
-  --type-label: .875rem;
+  --type-display-xl: clamp(3.5rem, 8.5vw, 8.5rem);
+  --type-display-l: clamp(2.5rem, 5.5vw, 5.5rem);
+  --type-heading-m: clamp(1.375rem, 2.2vw, 2.25rem);
+  --type-body-l: clamp(1.125rem, 1.4vw, 1.25rem);
+  --type-body: clamp(1rem, 0.95rem + 0.25vw, 1.1875rem);
+  --type-label: 0.875rem;
 
-  /* Fonts (Provided via next/font variables in layout.tsx) */
-  --font-display: var(--font-display), 'Playfair Display', Georgia, serif;
-  --font-interface: var(--font-interface), 'DM Sans', system-ui, sans-serif;
+  /* Typography Families (Bodoni Moda display, Manrope interface) */
+  --font-display: var(--font-display), 'Bodoni Moda', Georgia, serif;
+  --font-interface: var(--font-interface), 'Manrope', system-ui, sans-serif;
 
   /* Motion Tokens */
   --motion-ui-fast: 160ms;
-  --motion-ui: 240ms;
+  --motion-ui: 220ms;
   --motion-reveal: 600ms;
   --motion-cinematic: 900ms;
-  --ease-out: cubic-bezier(.22, 1, .36, 1);
-  --ease-standard: cubic-bezier(.2, 0, 0, 1);
-  
-  /* Layout & Sticky Header Offset */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Layout & Sticky Offsets */
   --max-width: 1440px;
   --header-sticky-offset: 80px;
   --combined-sticky-offset: 140px;
-  --section-spacing: clamp(5rem, 11vw, 10rem);
+  --section-spacing: clamp(4.5rem, 10vw, 9rem);
   --content-padding: clamp(1rem, 5vw, 4rem);
 
-  /* Default Theme (Light/Act I) */
-  --bg-color: var(--paper-50);
-  --text-color: var(--ink-950);
-  --text-secondary: var(--ink-800);
-  --surface-color: var(--chalk-0);
+  /* Global Theme Defaults (Default is Dark Evening Restobar) */
+  --bg-color: var(--surface-page);
+  --text-color: var(--text-primary);
+  --text-secondary: var(--mineral-300);
+  --surface-color: var(--surface-elevated);
 
-  /* Component Aliases */
+  /* Legacy Component Aliases */
   --color-background: var(--bg-color);
   --color-surface: var(--surface-color);
   --color-text-primary: var(--text-color);
   --color-text-secondary: var(--text-secondary);
-  --color-border: var(--text-secondary);
+  --color-border: var(--border-subtle);
 }
 
 [data-theme="night"] {
   --bg-color: var(--ink-950);
   --text-color: var(--chalk-0);
-  --text-secondary: var(--sea-300);
-  --surface-color: var(--ink-800);
+  --text-secondary: var(--mineral-300);
+  --surface-color: var(--ink-900);
 }
 
 [data-theme="warm"] {
-  --bg-color: var(--ember-900);
+  --bg-color: var(--espresso-900);
   --text-color: var(--chalk-0);
-  --text-secondary: var(--sand-500);
-  --surface-color: var(--terracotta-600);
+  --text-secondary: var(--sand-300);
+  --surface-color: var(--oxblood-900);
+}
+
+[data-theme="charcoal"] {
+  --bg-color: var(--charcoal-900);
+  --text-color: var(--chalk-0);
+  --text-secondary: var(--mineral-300);
+  --surface-color: var(--ink-900);
 }
 
 html {

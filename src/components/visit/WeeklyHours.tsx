@@ -1,4 +1,3 @@
-import { getCleanHours } from '@/lib/cms/publication-safety';
 import type { OperatingHours } from '@/lib/cms/types';
 import styles from './WeeklyHours.module.css';
 
@@ -25,7 +24,6 @@ const DEFAULT_WEEK: DaySchedule[] = [
 ];
 
 export default function WeeklyHours({ hours }: Props) {
-  const cleanHours = getCleanHours(hours);
 
   // Determine current day of week (0 = Sunday, 1 = Monday, etc.)
   const todayIndex = new Date().getDay();
@@ -39,9 +37,6 @@ export default function WeeklyHours({ hours }: Props) {
             <h2 id="hours-title" className={styles.title}>
               Opening hours
             </h2>
-            {cleanHours.isDraft && cleanHours.isDev && (
-              <span className={styles.devBadge}>[PREVIEW: Schedule Subject to Final Confirmation]</span>
-            )}
           </div>
 
           <div>
@@ -76,7 +71,7 @@ export default function WeeklyHours({ hours }: Props) {
             </dl>
 
             <p className={styles.note}>
-              Kitchen closes 45 minutes prior to venue closing time. Kitchen and bar hours are subject to special event bookings.
+              {hours?.hoursDetail || 'Kitchen closes 45 minutes prior to venue closing time. Kitchen and bar hours are subject to special event bookings.'}
             </p>
           </div>
         </div>

@@ -222,7 +222,6 @@ export default function ReservationDialog({ isOpen, onClose, initialConfig }: Pr
                 <ReservationSummary
                   details={details}
                   onGoToStep={s => setStep(s as ReservationStep)}
-                  isDraftFixture={initialConfig.enableFixtures}
                 />
               )}
 
@@ -252,7 +251,6 @@ export default function ReservationDialog({ isOpen, onClose, initialConfig }: Pr
                   onSelectTime={t => updateDetail('timeSlot', t)}
                   loading={loading}
                   error={errorMessage}
-                  isDraftFixture={initialConfig.enableFixtures}
                 />
               )}
 

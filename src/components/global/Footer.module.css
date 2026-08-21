@@ -1,8 +1,8 @@
 .footer {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--surface-deepest);
+  color: var(--chalk-0);
   padding: var(--section-spacing) 0;
-  border-top: 1px solid var(--surface-color);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .container {
@@ -27,14 +27,16 @@
 .logo {
   font-family: var(--font-display);
   font-size: var(--type-heading-m);
+  color: var(--chalk-0);
   margin-bottom: 1rem;
 }
 
 .heading {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--text-secondary);
+  color: var(--sand-300);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: 0.5rem;
 }
 
@@ -80,7 +82,7 @@
   flex-direction: column;
   gap: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--surface-color);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .legal {

@@ -1,7 +1,7 @@
 .section {
   padding: var(--section-spacing) 0;
-  background-color: var(--chalk-0);
-  color: var(--ink-950);
+  background-color: var(--surface-elevated);
+  color: var(--chalk-0);
 }
 
 .container {
@@ -11,7 +11,11 @@
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: var(--type-display-l);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--chalk-0);
   margin-bottom: 3rem;
   text-align: left;
 }
@@ -20,7 +24,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  border-top: 1px solid var(--mineral-700);
+  border-top: 1px solid var(--border-subtle);
   padding-top: 3rem;
 }
 
@@ -31,10 +35,11 @@
 }
 
 .label {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--mineral-700);
+  letter-spacing: 0.08em;
+  color: var(--sand-300);
   margin: 0;
 }
 
@@ -43,6 +48,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  font-family: var(--font-interface);
+  color: var(--mineral-300);
 }
 
 .address p, .column p {
@@ -52,19 +59,21 @@
 .transport {
   margin-top: 1rem;
   font-size: var(--type-label);
-  color: var(--ink-800);
+  color: var(--mineral-300);
 }
 
 .link {
+  font-family: var(--font-interface);
+  color: var(--chalk-0);
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 500;
-  transition: opacity var(--motion-ui-fast) var(--ease-out);
+  transition: color var(--motion-ui-fast) var(--ease-out);
   align-self: flex-start;
 }
 
 .link:hover {
-  text-decoration: none;
+  color: var(--sand-300);
 }
 
 .status {
@@ -81,16 +90,19 @@
   flex-shrink: 0;
 }
 
-.success { background-color: var(--success-700); }
-.neutral { background-color: var(--mineral-700); }
+.success { background-color: var(--success-400); }
+.neutral { background-color: var(--mineral-500); }
 
 .statusLabel {
+  font-family: var(--font-interface);
   font-weight: 500;
   font-size: var(--type-label);
+  color: var(--chalk-0);
 }
 
 .hoursDetail {
-  color: var(--ink-800);
+  font-family: var(--font-interface);
+  color: var(--mineral-300);
 }
 
 .ctaWrapper {

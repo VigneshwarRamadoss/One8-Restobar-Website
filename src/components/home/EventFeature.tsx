@@ -30,11 +30,11 @@ export default function EventFeature() {
           <ul className={styles.capacityList}>
             <li>
               <span className={styles.capacityLabel}>Seated Dining</span>
-              <span className={styles.capacityValue}>[DRAFT - Capacity Pending]</span>
+              <span className={styles.capacityValue}>On enquiry</span>
             </li>
             <li>
               <span className={styles.capacityLabel}>Standing Reception</span>
-              <span className={styles.capacityValue}>[DRAFT - Capacity Pending]</span>
+              <span className={styles.capacityValue}>On enquiry</span>
             </li>
             <li>
               <span className={styles.capacityLabel}>Exclusive Hire</span>

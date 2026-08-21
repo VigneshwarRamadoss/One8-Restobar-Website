@@ -32,7 +32,7 @@ export default async function DecisionRail() {
             </a>
           ) : (
             <span className={styles.disabledLink} title="Directions URL pending configuration">
-              Directions <span className={styles.draftBadge}>[DRAFT]</span>
+              Directions
             </span>
           )}
         </div>

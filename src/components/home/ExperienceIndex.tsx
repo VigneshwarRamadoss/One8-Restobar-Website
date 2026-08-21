@@ -75,7 +75,7 @@ export default function ExperienceIndex({ experiences }: Props) {
                   
                   <div className={styles.content}>
                     <h3 className={styles.name}>
-                      {exp.title} {exp.isDraft && <span className={styles.draftBadge}>[DRAFT]</span>}
+                      {exp.title}
                     </h3>
                     <div className={styles.metadata}>
                       <span className={styles.bestFor}>{exp.bestFor}</span>

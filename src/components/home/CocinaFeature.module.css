@@ -1,7 +1,7 @@
 .section {
   padding: calc(var(--section-spacing) * 1.5) 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--surface-page);
+  color: var(--chalk-0);
 }
 
 .container {
@@ -18,14 +18,19 @@
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: var(--type-display-l);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--chalk-0);
   margin-bottom: 1.5rem;
 }
 
 .text {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
-  line-height: 1.5;
-  color: var(--text-secondary);
+  line-height: 1.55;
+  color: var(--mineral-300);
   margin: 0;
 }
 

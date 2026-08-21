@@ -1,7 +1,9 @@
 .hero {
   position: relative;
   padding-block: clamp(4rem, 9vw, 8rem);
-  border-bottom: 1px solid color-mix(in srgb, var(--ink-950) 20%, transparent);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-charcoal);
+  color: var(--chalk-0);
 }
 
 .frame {
@@ -12,11 +14,12 @@
 
 .eyebrow {
   margin: 0 0 2rem;
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .heroGrid {
@@ -33,32 +36,36 @@
 
 .title {
   max-width: 12ch;
+  font-family: var(--font-display);
   font-size: clamp(3.75rem, 7.5vw, 7.5rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--chalk-0);
   margin-bottom: 2.5rem;
 }
 
 .title span {
   display: block;
   font-style: italic;
-  color: var(--mineral-700);
+  color: var(--mineral-300);
   margin-top: 0.25rem;
 }
 
 .lead {
   max-width: 34rem;
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
   line-height: 1.55;
-  color: var(--ink-800);
+  color: var(--mineral-300);
   margin-bottom: 1.25rem;
 }
 
 .paragraph {
   max-width: 34rem;
+  font-family: var(--font-interface);
   font-size: var(--type-body);
   line-height: 1.6;
-  color: var(--mineral-700);
+  color: var(--mineral-300);
   margin-bottom: 2.5rem;
 }
 
@@ -75,22 +82,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--ink-950);
-  color: var(--chalk-0);
+  background: var(--paper-50);
+  color: var(--ink-1000);
   font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
   text-decoration: none;
   transition: background-color var(--motion-ui-fast) var(--ease-out);
 }
 
 .primaryLink:hover {
-  background: var(--ink-800);
+  background: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .primaryLink:focus-visible {
-  outline: 2px solid var(--ink-950);
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }
 
@@ -102,7 +111,7 @@
   font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--ink-950);
+  color: var(--chalk-0);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
 }
@@ -111,12 +120,16 @@
   transition: transform var(--motion-ui-fast) var(--ease-out);
 }
 
+.secondaryLink:hover {
+  color: var(--sand-300);
+}
+
 .secondaryLink:hover span {
   transform: translateX(4px);
 }
 
 .secondaryLink:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }
 
@@ -124,8 +137,8 @@
   position: relative;
   aspect-ratio: 4 / 5;
   width: 100%;
-  background: var(--chalk-0);
-  border: 1px solid var(--sand-500);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
   overflow: hidden;
   display: flex;
   align-items: center;

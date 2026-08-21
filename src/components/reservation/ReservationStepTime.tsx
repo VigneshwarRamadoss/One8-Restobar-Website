@@ -9,7 +9,6 @@ interface Props {
   onSelectTime: (time: string) => void;
   loading?: boolean;
   error?: string | null;
-  isDraftFixture?: boolean;
 }
 
 export default function ReservationStepTime({
@@ -18,7 +17,6 @@ export default function ReservationStepTime({
   onSelectTime,
   loading,
   error,
-  isDraftFixture,
 }: Props) {
   const afternoonSlots = slots.filter(s => s.period === 'afternoon');
   const eveningSlots = slots.filter(s => s.period === 'evening');
@@ -38,12 +36,6 @@ export default function ReservationStepTime({
   return (
     <div className={styles.fieldGroup}>
       <label className={styles.label}>03 — Select Time *</label>
-
-      {isDraftFixture && (
-        <div className={styles.devFixtureNotice}>
-          [DEVELOPMENT FIXTURE — Simulated Availability Slots]
-        </div>
-      )}
 
       {error && (
         <div className={styles.errorSummary} style={{ marginBottom: '1rem' }}>

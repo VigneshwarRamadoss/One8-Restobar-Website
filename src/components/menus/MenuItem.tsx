@@ -24,7 +24,6 @@ export default function MenuItem({ item, currency = 'INR' }: Props) {
           </span>
         )}
 
-        {item.status === 'source-draft' && <span className={styles.draftBadge}>[DRAFT]</span>}
         {item.availability === 'unavailable' && <span className={styles.draftBadge}>[UNAVAILABLE]</span>}
       </dt>
 

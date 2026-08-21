@@ -87,7 +87,6 @@ export default async function ExperienceDetailPage({ params }: Props) {
           <div className={styles.heroContent}>
             <h1 id="experience-title" className={styles.title}>
               {experience.title}
-              {experience.isDraft && <span className={styles.draftBadge}>[DRAFT]</span>}
             </h1>
             <p className={styles.promise}>{experience.description}</p>
           </div>

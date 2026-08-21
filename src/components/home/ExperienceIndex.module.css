@@ -1,7 +1,7 @@
 .section {
   padding: var(--section-spacing) 0;
-  background-color: var(--chalk-0);
-  color: var(--ink-950);
+  background-color: var(--surface-page);
+  color: var(--chalk-0);
 }
 
 .container {
@@ -15,7 +15,11 @@
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: var(--type-display-l);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--chalk-0);
   max-width: 16ch;
 }
 
@@ -38,11 +42,11 @@
   display: flex;
   gap: 1.5rem;
   padding: 2rem 0;
-  border-top: 1px solid var(--sand-500);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .row:last-child {
-  border-bottom: 1px solid var(--sand-500);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .index {
@@ -50,7 +54,7 @@
   font-variant-numeric: tabular-nums;
   font-weight: 500;
   font-size: var(--type-label);
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .content {
@@ -61,23 +65,19 @@
 }
 
 .name {
+  font-family: var(--font-display);
   font-size: var(--type-heading-m);
+  color: var(--chalk-0);
   margin: 0;
-}
-
-.draftBadge {
-  font-size: 0.6em;
-  color: var(--mineral-700);
-  font-weight: 400;
-  vertical-align: middle;
 }
 
 .metadata {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--mineral-700);
+  color: var(--mineral-300);
 }
 
 .bestFor {
@@ -88,7 +88,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4/5;
-  background-color: var(--chalk-0);
+  background-color: var(--surface-elevated);
   margin: 1rem 0;
   overflow: hidden;
 }

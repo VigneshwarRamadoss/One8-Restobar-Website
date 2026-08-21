@@ -39,7 +39,6 @@ export default function VisitEssentials({ hours, contact }: Props) {
             <div className={styles.statusIndicator}>
               <span className={`${styles.dot} ${isOpen ? styles.dotOpen : ''}`} aria-hidden="true" />
               <span>{isOpen ? 'Open Now' : 'Schedule'}</span>
-              {cleanHours.isDraft && cleanHours.isDev && <span className={styles.devTag}>[DRAFT]</span>}
             </div>
             {cleanHours.label && <p className={styles.value}>{cleanHours.label}</p>}
           </div>

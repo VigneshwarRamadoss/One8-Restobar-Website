@@ -1,8 +1,8 @@
 .hero {
   padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--paper-50);
-  color: var(--ink-950);
-  border-bottom: 1px solid color-mix(in srgb, var(--ink-950) 15%, transparent);
+  background: var(--surface-page);
+  color: var(--chalk-0);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .frame {
@@ -13,11 +13,12 @@
 
 .eyebrow {
   margin: 0 0 1.5rem;
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .grid {
@@ -28,9 +29,11 @@
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: clamp(3.75rem, 7.5vw, 7.5rem);
-  line-height: 0.9;
+  line-height: 0.92;
   letter-spacing: -0.04em;
+  color: var(--chalk-0);
   margin-bottom: 0;
 }
 
@@ -41,9 +44,10 @@
 }
 
 .lead {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
   line-height: 1.55;
-  color: var(--ink-800);
+  color: var(--mineral-300);
   margin: 0;
 }
 
@@ -60,13 +64,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--ink-950);
-  color: var(--chalk-0);
+  background: var(--paper-50);
+  color: var(--ink-1000);
   font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
   text-decoration: none;
+  transition: background-color var(--motion-ui-fast) var(--ease-out);
+}
+
+.primaryBtn:hover {
+  background: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .secondaryLink {
@@ -77,7 +88,7 @@
   font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--ink-950);
+  color: var(--chalk-0);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
 }

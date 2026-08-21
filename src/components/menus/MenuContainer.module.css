@@ -3,24 +3,24 @@
 }
 
 .chapterNav {
-  background-color: var(--surface-color);
-  border: 1px solid rgba(9, 26, 42, 0.12);
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
   padding: 1rem 1.5rem;
   margin-bottom: 3rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .chapterNavLabel {
   font-family: var(--font-interface);
   font-size: var(--type-label);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--sand-300);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .chapterNavList {
@@ -36,7 +36,7 @@
   font-family: var(--font-interface);
   font-size: var(--type-label);
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--chalk-0);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -47,16 +47,16 @@
 }
 
 .chapterNavLink:hover {
-  color: var(--sand-500);
+  color: var(--sand-300);
 }
 
 .chapterNavLink:focus-visible {
-  outline: 2px solid var(--sand-500);
+  outline: 2px solid var(--sand-300);
   outline-offset: 2px;
 }
 
 .chapterNavNum {
-  color: var(--mineral-700);
+  color: var(--sand-300);
   font-size: 0.85em;
   font-weight: 600;
 }
@@ -68,7 +68,7 @@
 }
 
 .chapterWrapper {
-  border-top: 1px solid rgba(9, 26, 42, 0.1);
+  border-top: 1px solid var(--border-subtle);
   padding-top: 2rem;
   scroll-margin-top: var(--combined-sticky-offset);
 }
@@ -76,6 +76,9 @@
 .chapterTitle {
   font-family: var(--font-display);
   font-size: var(--type-chapter-heading, clamp(2rem, 4.5vw, 4.75rem));
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--chalk-0);
   margin: 0 0 1rem 0;
   display: flex;
   align-items: baseline;
@@ -84,13 +87,14 @@
 }
 
 .chapterNum {
-  color: var(--mineral-700);
+  color: var(--sand-300);
   font-size: 0.7em;
 }
 
 .chapterIntro {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
-  color: var(--text-secondary);
+  color: var(--mineral-300);
   max-width: 60ch;
   margin: 0 0 3rem 0;
 }

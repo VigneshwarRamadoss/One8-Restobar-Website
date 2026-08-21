@@ -25,7 +25,7 @@ export default async function MenuFeature() {
         <div className={styles.layout}>
           <div className={styles.menuSnippet}>
             <h3 className={styles.categoryTitle}>
-              {highlightCategory?.displayTitle} {menu.isDraft && <span className={styles.draftBadge}>[DRAFT]</span>}
+              {highlightCategory?.displayTitle}
             </h3>
             {highlightCategory && (
               <dl className={styles.menuList}>

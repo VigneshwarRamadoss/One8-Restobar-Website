@@ -1,7 +1,8 @@
 .rail {
   padding-block: clamp(2.5rem, 5vw, 4rem);
-  background: var(--paper-50);
-  border-bottom: 1px solid var(--sand-500);
+  background: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--chalk-0);
 }
 
 .frame {
@@ -23,44 +24,48 @@
 }
 
 .label {
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .statusIndicator {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--ink-950);
+  color: var(--chalk-0);
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--mineral-700);
+  background: var(--mineral-500);
 }
 
 .dotOpen {
-  background: var(--success-700);
+  background: var(--success-400);
 }
 
 .value {
+  font-family: var(--font-interface);
   font-size: var(--type-body);
   line-height: 1.5;
-  color: var(--ink-800);
+  color: var(--mineral-300);
   margin: 0;
 }
 
 .link {
+  font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--ink-950);
+  color: var(--chalk-0);
   text-decoration: underline;
   margin-top: 0.25rem;
 }

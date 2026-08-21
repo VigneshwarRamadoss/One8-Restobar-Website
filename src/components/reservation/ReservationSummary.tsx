@@ -7,7 +7,7 @@ interface Props {
   isDraftFixture?: boolean;
 }
 
-export default function ReservationSummary({ details, onGoToStep, isDraftFixture }: Props) {
+export default function ReservationSummary({ details, onGoToStep }: Props) {
   const experienceNames: Record<string, string> = {
     dining: 'Dining Room',
     bar: 'Cocktail Bar',
@@ -20,8 +20,9 @@ export default function ReservationSummary({ details, onGoToStep, isDraftFixture
     <div
       style={{
         padding: '0.875rem 1rem',
-        backgroundColor: 'var(--chalk-0)',
-        border: '1px solid var(--sand-500)',
+        backgroundColor: 'var(--ink-850)',
+        border: '1px solid var(--border-subtle)',
+        color: 'var(--chalk-0)',
         borderRadius: '2px',
         fontSize: '0.8125rem',
         display: 'flex',
@@ -29,11 +30,6 @@ export default function ReservationSummary({ details, onGoToStep, isDraftFixture
         gap: '0.375rem',
       }}
     >
-      {isDraftFixture && (
-        <span style={{ fontSize: '0.6875rem', fontWeight: 600, color: 'var(--terracotta-600)' }}>
-          [DEV FIXTURE DATA]
-        </span>
-      )}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span>
           <strong>Date:</strong> {details.date || 'Not selected'}

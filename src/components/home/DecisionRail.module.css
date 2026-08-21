@@ -1,15 +1,16 @@
 .rail {
-  background-color: var(--surface-color);
-  border-bottom: 1px solid var(--text-secondary);
+  background-color: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--chalk-0);
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.5rem var(--content-padding);
+  padding: 1.25rem var(--content-padding);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .item {
@@ -19,15 +20,18 @@
 }
 
 .label {
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  color: var(--mineral-300);
 }
 
 .value {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
   font-weight: 500;
+  color: var(--chalk-0);
 }
 
 .actions {
@@ -38,28 +42,24 @@
 }
 
 .link {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
   font-weight: 500;
+  color: var(--chalk-0);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .link:hover {
-  text-decoration: none;
+  color: var(--sand-300);
 }
 
 .disabledLink {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--mineral-500);
   cursor: not-allowed;
-  opacity: 0.85;
-}
-
-.draftBadge {
-  font-size: 0.75em;
-  color: var(--ink-950);
-  font-weight: 500;
 }
 
 @media (min-width: 768px) {

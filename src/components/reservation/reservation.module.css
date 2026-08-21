@@ -24,52 +24,56 @@
 }
 
 .primary {
-  background-color: var(--ink-950);
-  color: var(--chalk-0);
+  background-color: var(--paper-50);
+  color: var(--ink-1000);
   padding: 0 1.5rem;
-  border: 1px solid var(--ink-950);
+  border: 1px solid var(--paper-50);
 }
 
 .primary:hover {
-  background-color: var(--ink-800);
-  border-color: var(--ink-800);
+  background-color: var(--paper-100);
+  border-color: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .secondary {
   background-color: transparent;
-  color: var(--ink-950);
-  border: 1px solid var(--ink-950);
+  color: var(--chalk-0);
+  border: 1px solid var(--border-strong);
   padding: 0 1.5rem;
 }
 
 .secondary:hover {
-  background-color: var(--ink-950);
+  border-color: var(--chalk-0);
+  background-color: rgba(244, 239, 230, 0.08);
   color: var(--chalk-0);
 }
 
 .nav {
-  color: inherit;
-  border: 1px solid currentColor;
+  background-color: var(--paper-50);
+  color: var(--ink-1000);
+  border: 1px solid var(--paper-50);
   padding: 0 1.25rem;
   height: 44px;
-  background: transparent;
 }
 
 .nav:hover {
-  background-color: currentColor;
-  color: var(--bg-color);
+  background-color: var(--paper-100);
+  border-color: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .overlayTrigger {
   background: transparent;
   color: var(--chalk-0);
-  border: 1px solid var(--chalk-0);
+  border: 1px solid var(--border-strong);
   padding: 0 1.5rem;
 }
 
 .overlayTrigger:hover {
-  background: var(--chalk-0);
-  color: var(--ink-950);
+  border-color: var(--chalk-0);
+  background: rgba(244, 239, 230, 0.08);
+  color: var(--chalk-0);
 }
 
 .disabled {
@@ -99,11 +103,11 @@
   width: 100%;
   max-width: 540px;
   height: 100dvh;
-  background-color: var(--paper-50);
-  color: var(--ink-950);
+  background-color: var(--surface-elevated);
+  color: var(--chalk-0);
   display: flex;
   flex-direction: column;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+  box-shadow: -4px 0 32px rgba(0, 0, 0, 0.6);
   overflow-y: auto;
   animation: slideInRight 240ms var(--ease-out);
 }
@@ -135,7 +139,7 @@
 /* Dialog Header */
 .header {
   padding: 1.75rem var(--content-padding) 1.25rem;
-  border-bottom: 1px solid var(--sand-500);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -148,7 +152,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
   margin-bottom: 0.25rem;
 }
 
@@ -156,19 +160,20 @@
   font-family: var(--font-display);
   font-size: var(--type-heading-m);
   margin: 0 0 0.25rem;
-  color: var(--ink-950);
+  color: var(--chalk-0);
 }
 
 .subtext {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
-  color: var(--mineral-700);
+  color: var(--mineral-300);
   margin: 0;
 }
 
 .closeButton {
   background: transparent;
-  border: 1px solid var(--mineral-700);
-  color: var(--ink-950);
+  border: 1px solid var(--border-strong);
+  color: var(--chalk-0);
   width: 44px;
   height: 44px;
   border-radius: 2px;
@@ -178,16 +183,16 @@
   font-size: 1.25rem;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background-color 160ms var(--ease-out);
+  transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out);
 }
 
 .closeButton:hover {
-  background-color: var(--ink-950);
-  color: var(--chalk-0);
+  background-color: var(--paper-50);
+  color: var(--ink-1000);
 }
 
 .closeButton:focus-visible {
-  outline: 2px solid var(--ink-950);
+  outline: 2px solid var(--sand-300);
   outline-offset: 2px;
 }
 
@@ -196,20 +201,20 @@
   display: flex;
   gap: 0.25rem;
   padding: 0.75rem var(--content-padding);
-  background-color: color-mix(in srgb, var(--paper-50) 90%, var(--ink-950));
-  border-bottom: 1px solid var(--sand-500);
+  background-color: var(--surface-deepest);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .progressBar {
   flex: 1;
   height: 4px;
-  background-color: var(--sand-500);
+  background-color: var(--surface-page);
   border-radius: 2px;
   transition: background-color 200ms var(--ease-out);
 }
 
 .progressBarActive {
-  background-color: var(--ink-950);
+  background-color: var(--sand-300);
 }
 
 /* Body / Step Container */
@@ -231,8 +236,8 @@
 .label {
   font-family: var(--font-interface);
   font-size: var(--type-label);
-  font-weight: 600;
-  color: var(--ink-950);
+  font-weight: 500;
+  color: var(--chalk-0);
 }
 
 .input, .select, .textarea {
@@ -240,16 +245,18 @@
   padding: 0.875rem 1rem;
   font-family: var(--font-interface);
   font-size: var(--type-body);
-  color: var(--ink-950);
-  background-color: var(--chalk-0);
-  border: 1px solid var(--mineral-700);
+  color: var(--chalk-0);
+  background-color: var(--ink-850);
+  border: 1px solid var(--border-subtle);
   border-radius: 2px;
   min-height: 44px;
 }
 
 .input:focus, .select:focus, .textarea:focus {
-  outline: 2px solid var(--ink-950);
+  outline: 2px solid var(--sand-300);
   outline-offset: 1px;
+  border-color: var(--sand-300);
+  background-color: var(--ink-900);
 }
 
 .inputError {
@@ -257,6 +264,7 @@
 }
 
 .errorText {
+  font-family: var(--font-interface);
   font-size: 0.8125rem;
   color: var(--error-700);
   margin-top: 0.25rem;
@@ -272,9 +280,9 @@
 .choiceBtn {
   min-height: 48px;
   padding: 0.75rem 1rem;
-  background-color: var(--chalk-0);
-  border: 1px solid var(--mineral-700);
-  color: var(--ink-950);
+  background-color: var(--ink-850);
+  border: 1px solid var(--border-subtle);
+  color: var(--chalk-0);
   font-family: var(--font-interface);
   font-size: 0.9375rem;
   font-weight: 500;
@@ -288,14 +296,14 @@
 }
 
 .choiceBtn:hover {
-  border-color: var(--ink-950);
-  background-color: color-mix(in srgb, var(--paper-50) 50%, var(--chalk-0));
+  border-color: var(--border-strong);
+  background-color: var(--ink-900);
 }
 
 .choiceBtnSelected {
-  background-color: var(--ink-950);
-  color: var(--chalk-0);
-  border-color: var(--ink-950);
+  background-color: var(--paper-50);
+  color: var(--ink-1000);
+  border-color: var(--paper-50);
 }
 
 .choiceBtnDisabled {
@@ -307,8 +315,8 @@
 /* Footer / Actions Bar */
 .dialogFooter {
   padding: 1.25rem var(--content-padding);
-  border-top: 1px solid var(--sand-500);
-  background-color: var(--paper-50);
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--surface-elevated);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -318,19 +326,24 @@
 .backBtn {
   background: transparent;
   border: none;
-  color: var(--ink-950);
+  color: var(--chalk-0);
   font-family: var(--font-interface);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem;
   min-height: 44px;
+  transition: color 160ms var(--ease-out);
+}
+
+.backBtn:hover {
+  color: var(--sand-300);
 }
 
 .nextBtn {
-  background-color: var(--ink-950);
-  color: var(--chalk-0);
-  border: none;
+  background-color: var(--paper-50);
+  color: var(--ink-1000);
+  border: 1px solid var(--paper-50);
   padding: 0 1.75rem;
   height: 48px;
   font-family: var(--font-interface);
@@ -342,10 +355,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  transition: background-color 160ms var(--ease-out);
 }
 
-.nextBtn:hover {
-  background-color: var(--ink-800);
+.nextBtn:hover:not(:disabled) {
+  background-color: var(--paper-100);
+  border-color: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .nextBtn:disabled {

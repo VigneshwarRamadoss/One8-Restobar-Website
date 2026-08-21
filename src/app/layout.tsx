@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const displayFont = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["400", "500", "600"],
 });
 
-const dmSans = DM_Sans({
+const interfaceFont = Manrope({
   subsets: ["latin"],
   variable: "--font-interface",
   display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -47,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${interfaceFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

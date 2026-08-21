@@ -2,25 +2,29 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
   padding: 2rem;
-  background-color: var(--surface-color);
-  border-top: 1px solid var(--text-color);
+  background-color: var(--surface-elevated);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  border-radius: 2px;
 }
 
 .title {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   font-weight: 600;
   margin: 0;
-  color: var(--text-color);
+  color: var(--chalk-0);
 }
 
 .text {
+  font-family: var(--font-interface);
   font-size: var(--type-body);
-  color: var(--text-secondary);
+  color: var(--mineral-300);
   line-height: 1.5;
   margin: 0;
   max-width: 65ch;

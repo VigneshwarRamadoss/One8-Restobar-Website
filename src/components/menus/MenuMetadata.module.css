@@ -3,10 +3,11 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 1.25rem;
   padding: 1.5rem;
-  background-color: var(--surface-color);
-  border-top: 1px solid var(--sea-300);
-  border-bottom: 1px solid var(--sea-300);
+  background-color: var(--surface-elevated);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   margin-bottom: 3rem;
+  border-radius: 2px;
 }
 
 .item {
@@ -16,15 +17,18 @@
 }
 
 .label {
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  color: var(--mineral-300);
 }
 
 .value {
+  font-family: var(--font-interface);
   font-size: var(--type-label);
   font-weight: 500;
+  color: var(--sand-300);
 }
 
 @media (min-width: 600px) {

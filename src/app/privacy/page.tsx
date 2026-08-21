@@ -14,12 +14,10 @@ export default function PrivacyPage() {
   return (
     <>
       <Header />
-      <main id="main-content" style={{ padding: 'calc(var(--spacing-xl) * 2) var(--spacing-md)', maxWidth: '800px', margin: '0 auto' }}>
-        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: 'var(--spacing-lg)' }}>Privacy Policy</h1>
+      <main id="main-content" style={{ padding: 'calc(var(--spacing-xl) * 2) var(--content-padding)', maxWidth: '800px', margin: '0 auto', color: 'var(--chalk-0)' }}>
+        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: 'var(--spacing-lg)', color: 'var(--chalk-0)' }}>Privacy Policy</h1>
         
-        <div style={{ fontFamily: 'var(--font-interface)', fontSize: '1rem', lineHeight: 1.6, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)' }}>
-          <p><em>[DRAFT - Placeholder for official Datenschutz / Privacy Policy]</em></p>
-          
+        <div style={{ fontFamily: 'var(--font-interface)', fontSize: '1rem', lineHeight: 1.6, color: 'var(--mineral-300)', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <h2>1. Data Protection at a Glance</h2>
           <p>
             General information on how we handle your personal data when you visit our website. Personal data is any data with which you could be personally identified.

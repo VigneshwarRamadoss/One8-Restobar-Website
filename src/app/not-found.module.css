@@ -1,8 +1,8 @@
 .wrapper {
   padding-top: calc(72px + 4rem);
   padding-bottom: 6rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--surface-page);
+  color: var(--chalk-0);
 }
 
 .container {
@@ -20,21 +20,23 @@
   font-size: clamp(4rem, 12vw, 10rem);
   font-weight: 400;
   line-height: 1;
-  color: var(--sea-300);
+  color: var(--sand-300);
 }
 
 .title {
   font-family: var(--font-display);
   font-size: var(--type-display-l);
+  color: var(--chalk-0);
   margin: 1rem 0 0.5rem 0;
 }
 
 .description {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
-  color: var(--text-secondary);
+  color: var(--mineral-300);
   margin: 0 0 2.5rem 0;
   max-width: 44ch;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .actions {
@@ -51,21 +53,22 @@
   justify-content: center;
   height: 48px;
   padding: 0 1.5rem;
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--paper-50);
+  color: var(--ink-1000);
   text-decoration: none;
   font-weight: 500;
   font-family: var(--font-interface);
-  border-radius: 4px;
-  transition: opacity var(--motion-ui-fast) var(--ease-out);
+  border-radius: 2px;
+  transition: background-color var(--motion-ui-fast) var(--ease-out);
 }
 
 .primaryLink:hover {
-  opacity: 0.85;
+  background-color: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .primaryLink:focus-visible {
-  outline: 2px solid var(--text-color);
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }
 
@@ -75,21 +78,22 @@
   justify-content: center;
   height: 48px;
   padding: 0 1.5rem;
-  border: 1px solid var(--text-color);
-  color: var(--text-color);
+  border: 1px solid var(--border-strong);
+  color: var(--chalk-0);
   text-decoration: none;
   font-weight: 500;
   font-family: var(--font-interface);
-  border-radius: 4px;
+  border-radius: 2px;
   transition: all var(--motion-ui-fast) var(--ease-out);
 }
 
 .secondaryLink:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: rgba(244, 239, 230, 0.08);
+  border-color: var(--chalk-0);
+  color: var(--chalk-0);
 }
 
 .secondaryLink:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }

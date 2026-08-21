@@ -23,20 +23,14 @@ export default function ReservationConfirmation({
 }: Props) {
   return (
     <div className={styles.body}>
-      {confirmation.isDraftFixture && (
-        <div className={styles.devFixtureNotice}>
-          [DEVELOPMENT FIXTURE — Simulated Booking Confirmation]
-        </div>
-      )}
-
-      <div style={{ padding: '1.5rem', backgroundColor: 'var(--chalk-0)', border: '1px solid var(--sand-500)', borderRadius: '2px' }}>
-        <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--mineral-700)' }}>
+      <div style={{ padding: '1.5rem', backgroundColor: 'var(--ink-850)', border: '1px solid var(--border-subtle)', borderRadius: '2px', color: 'var(--chalk-0)' }}>
+        <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--sand-300)' }}>
           CONFIRMED BOOKING
         </span>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', margin: '0.5rem 0' }}>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', margin: '0.5rem 0', color: 'var(--chalk-0)' }}>
           {confirmation.bookingReference || 'CONFIRMED'}
         </h3>
-        <p style={{ fontSize: '0.875rem', color: 'var(--mineral-700)', margin: 0 }}>
+        <p style={{ fontSize: '0.875rem', color: 'var(--mineral-300)', margin: 0 }}>
           Please present this reference upon arrival. A confirmation email has been dispatched.
         </p>
       </div>

@@ -1,14 +1,14 @@
 .section {
   padding-block: var(--section-spacing);
-  background: var(--paper-50);
-  color: var(--ink-950);
-  border-top: 1px solid var(--sand-500);
+  background: var(--surface-warm);
+  color: var(--chalk-0);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .section[data-theme="night"] {
-  background: var(--ink-950);
+  background: var(--surface-deepest);
   color: var(--chalk-0);
-  border-top: 1px solid color-mix(in srgb, var(--sea-300) 25%, transparent);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .frame {
@@ -23,33 +23,37 @@
 
 .eyebrow {
   margin: 0 0 1.5rem;
+  font-family: var(--font-interface);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mineral-700);
+  color: var(--sand-300);
 }
 
 .section[data-theme="night"] .eyebrow {
-  color: var(--sea-300);
+  color: var(--sand-300);
 }
 
 .title {
+  font-family: var(--font-display);
   font-size: clamp(2.75rem, 5vw, 5rem);
   line-height: 0.94;
   margin-bottom: 1.5rem;
   letter-spacing: -0.035em;
+  color: var(--chalk-0);
 }
 
 .lead {
+  font-family: var(--font-interface);
   font-size: var(--type-body-l);
   line-height: 1.55;
-  color: var(--ink-800);
+  color: var(--mineral-300);
   margin-bottom: 2.5rem;
 }
 
 .section[data-theme="night"] .lead {
-  color: var(--sea-300);
+  color: var(--mineral-300);
 }
 
 .actions {
@@ -65,36 +69,39 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--ink-950);
-  color: var(--chalk-0);
+  background: var(--paper-50);
+  color: var(--ink-1000);
   font-family: var(--font-interface);
   font-size: 0.9375rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
   text-decoration: none;
-  transition: background-color var(--motion-ui-fast) var(--ease-out), transform var(--motion-ui-fast) var(--ease-out);
+  transition: background-color var(--motion-ui-fast) var(--ease-out);
 }
 
 .section[data-theme="night"] .primaryBtn {
-  background: var(--chalk-0);
-  color: var(--ink-950);
+  background: var(--paper-50);
+  color: var(--ink-1000);
 }
 
 .primaryBtn:hover {
-  background: var(--ink-800);
+  background: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .section[data-theme="night"] .primaryBtn:hover {
-  background: var(--paper-50);
+  background: var(--paper-100);
+  color: var(--ink-1000);
 }
 
 .primaryBtn:focus-visible {
-  outline: 2px solid var(--ink-950);
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }
 
 .section[data-theme="night"] .primaryBtn:focus-visible {
-  outline-color: var(--chalk-0);
+  outline-color: var(--sand-300);
 }
 
 .secondaryLink {
@@ -105,10 +112,10 @@
   font-family: var(--font-interface);
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--ink-950);
+  color: var(--chalk-0);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
-  transition: opacity var(--motion-ui-fast) var(--ease-out);
+  transition: color var(--motion-ui-fast) var(--ease-out);
 }
 
 .section[data-theme="night"] .secondaryLink {
@@ -119,12 +126,16 @@
   transition: transform var(--motion-ui-fast) var(--ease-out);
 }
 
+.secondaryLink:hover {
+  color: var(--sand-300);
+}
+
 .secondaryLink:hover span {
   transform: translateX(4px);
 }
 
 .secondaryLink:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--sand-300);
   outline-offset: 4px;
 }
 

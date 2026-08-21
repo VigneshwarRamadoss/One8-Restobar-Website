@@ -30,17 +30,17 @@ export default function ReservePage() {
           </div>
 
           <div className={styles.formCard}>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--mineral-700)', margin: 0 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--mineral-300)', margin: 0, fontFamily: 'var(--font-interface)' }}>
               Launch the interactive reservation system or reach our hosting team directly.
             </p>
 
             <ReservationTrigger variant="primary" label="Open Reservation System" />
 
             {config.venuePhone && (
-              <div style={{ marginTop: '1rem', borderTop: '1px solid var(--sand-500)', paddingTop: '1rem' }}>
-                <strong>Direct Telephone Booking:</strong>
+              <div style={{ marginTop: '1rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '1rem', fontFamily: 'var(--font-interface)' }}>
+                <strong style={{ color: 'var(--chalk-0)' }}>Direct Telephone Booking:</strong>
                 <p style={{ margin: '0.25rem 0 0' }}>
-                  <a href={`tel:${config.venuePhone}`} style={{ color: 'var(--ink-950)', textDecoration: 'underline' }}>
+                  <a href={`tel:${config.venuePhone}`} style={{ color: 'var(--sand-300)', textDecoration: 'underline' }}>
                     {config.venuePhone}
                   </a>
                 </p>
