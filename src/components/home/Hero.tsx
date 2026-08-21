@@ -1,17 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import PrevisualBadge from '../global/PrevisualBadge';
-import ReservationCTA from '../global/ReservationCTA';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      {/* 
-        H00: First Paint (Poster). 
-        Since we lack assets, we use a neutral development placeholder.
-        Shot ID: 20g_venue_evening_hero_wide_01
-      */}
+      {/* H00: First Paint (Poster) */}
       <div className={styles.mediaStage}>
         <Image
           src="/images/previsual/01-home-hero-wide.png"
@@ -38,7 +33,6 @@ export default function Hero() {
         </div>
 
         <div className={styles.actions}>
-          <ReservationCTA variant="primary" />
           <Link href="/menus" className={styles.menuLink}>
             Explore the menu
           </Link>

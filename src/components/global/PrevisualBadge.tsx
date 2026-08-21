@@ -1,10 +1,9 @@
-import { isDevEnvironment } from '@/lib/cms/publication-safety';
 import styles from './PrevisualBadge.module.css';
 
 export default function PrevisualBadge() {
-  const isDev = isDevEnvironment();
+  const shouldShowBadge = process.env.NEXT_PUBLIC_SHOW_PREVISUAL_BADGES === 'true';
 
-  if (!isDev) return null;
+  if (!shouldShowBadge) return null;
 
   return (
     <div 

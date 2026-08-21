@@ -1,5 +1,5 @@
 import { getOperatingHours, getVenueContact } from '@/lib/cms/content-provider';
-import ReservationCTA from '../global/ReservationCTA';
+import ReservationTrigger from '../reservation/ReservationTrigger';
 import LiveStatus from '../global/LiveStatus';
 import styles from './DecisionRail.module.css';
 
@@ -20,7 +20,7 @@ export default async function DecisionRail() {
         </div>
 
         <div className={styles.actions}>
-          <ReservationCTA variant="secondary" href={contact.openTableUrl} />
+          <ReservationTrigger variant="secondary" href={contact.openTableUrl} />
           {contact.mapsUrl ? (
             <a 
               href={contact.mapsUrl} 

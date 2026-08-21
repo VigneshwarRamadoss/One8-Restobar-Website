@@ -1,0 +1,48 @@
+.page {
+  padding-top: var(--header-sticky-offset);
+  min-height: 100vh;
+  background-color: var(--paper-50);
+  color: var(--ink-950);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem var(--content-padding);
+}
+
+.hero {
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral-700);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--type-display-l);
+  margin: 0 0 1rem;
+}
+
+.lead {
+  font-size: var(--type-body-l);
+  color: var(--mineral-700);
+}
+
+.formCard {
+  max-width: 640px;
+  padding: 2rem;
+  background-color: var(--chalk-0);
+  border: 1px solid var(--sand-500);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

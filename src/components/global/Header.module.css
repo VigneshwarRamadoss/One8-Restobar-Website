@@ -23,9 +23,22 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  transition: background-color var(--motion-ui) var(--ease-standard),
-              color var(--motion-ui) var(--ease-standard);
-  height: 72px;
+  /* Use the exact requested transition */
+  transition: background-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  height: 80px;
+}
+
+/* Protective ink gradient behind transparent nav */
+.protectiveGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background: linear-gradient(to bottom, rgba(10, 15, 20, 0.6) 0%, rgba(10, 15, 20, 0) 100%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .transparent {
@@ -39,14 +52,20 @@
   border-bottom: 1px solid var(--text-secondary);
 }
 
+/* Three-column grid architecture */
 .container {
-  max-width: var(--max-width);
+  max-width: 1440px;
   margin: 0 auto;
   height: 100%;
   padding: 0 var(--content-padding);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
+}
+
+.logoArea {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .logo {
@@ -69,18 +88,48 @@
   outline-offset: 4px;
 }
 
-.desktopNav {
-  display: none;
+.navArea {
+  display: flex;
+  justify-content: center;
 }
 
-.actions {
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: clamp(24px, 2.2vw, 40px);
+}
+
+.navLink {
+  font-size: var(--type-label);
+  font-weight: 500;
+  transition: opacity var(--motion-ui-fast) var(--ease-out);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.navLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Bold the active link slightly or change opacity */
+.navLink[aria-current="page"] {
+  font-weight: 600;
+  opacity: 1;
+}
+
+.actionsArea {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.5rem;
-}
-
-.desktopCTA {
-  display: none;
 }
 
 .mobileMenuToggle {
@@ -110,8 +159,9 @@
   left: 0;
   width: 100%;
   height: 100dvh;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  /* Support safe area inset for notch */
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
   overflow-y: auto;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -190,6 +240,11 @@
   outline-offset: 4px;
 }
 
+.mobileNavLink[aria-current="page"] {
+  font-weight: 600;
+  opacity: 1;
+}
+
 .mobileMenuFooter {
   padding-bottom: 2rem;
   flex-shrink: 0;
@@ -199,55 +254,37 @@
   width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .desktopNav {
-    display: block;
-  }
-  
-  .navList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: clamp(1rem, 2vw, 2.5rem);
-  }
+/* Fallback for JS disabled: simple styling to ensure nav is visible if needed */
+.noscript-fallback {
+  display: none;
+}
 
-  .navLink {
-    font-size: var(--type-label);
-    font-weight: 500;
-    transition: opacity var(--motion-ui-fast) var(--ease-out);
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
+@media (min-width: 1130px) {
+  /* At 1130px, the center nav and outer equal-width grid columns have enough room to not squish */
+  .header {
+    height: 80px;
   }
-
-  .navLink:hover {
-    opacity: 0.7;
-  }
-
-  .navLink:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 4px;
-  }
-
-  .desktopCTA {
-    display: inline-flex;
-  }
-
   .mobileMenuToggle {
     display: none;
   }
-
-  .header {
-    height: 72px;
+  .desktopCTA {
+    display: inline-flex;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1129px) {
   .header {
-    height: 64px;
+    height: 72px;
   }
-  .mobileMenuHeader {
-    height: 64px;
+  .desktopCTA {
+    display: none;
+  }
+  .navArea {
+    display: none;
+  }
+  .container {
+    /* on mobile, we can just use space-between since the center nav is gone */
+    display: flex;
+    justify-content: space-between;
   }
 }

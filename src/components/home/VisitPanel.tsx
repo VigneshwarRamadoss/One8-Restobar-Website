@@ -1,5 +1,5 @@
 import { getOperatingHours, getVenueContact } from '@/lib/cms/content-provider';
-import ReservationCTA from '../global/ReservationCTA';
+import ReservationTrigger from '../reservation/ReservationTrigger';
 import styles from './VisitPanel.module.css';
 
 export default async function VisitPanel() {
@@ -55,7 +55,7 @@ export default async function VisitPanel() {
               <p className={styles.draftText}>Email: [DRAFT - Pending]</p>
             )}
             <div className={styles.ctaWrapper}>
-              <ReservationCTA variant="primary" href={contact.openTableUrl} />
+              <ReservationTrigger variant="primary" href={contact.openTableUrl} />
             </div>
           </div>
         </div>

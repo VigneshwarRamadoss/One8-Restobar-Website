@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ReservationCTA from '@/components/global/ReservationCTA';
+import ReservationTrigger from '@/components/reservation/ReservationTrigger';
 import { VenueContact } from '@/lib/cms/content-provider';
 import styles from './VisitCTA.module.css';
 
@@ -19,9 +19,9 @@ export default function VisitCTA({ contact }: Props) {
         </div>
 
         <div className={styles.actions}>
-          <ReservationCTA variant="primary" href={contact?.openTableUrl} />
+          <ReservationTrigger variant="primary" href={contact?.openTableUrl} />
           
-          <Link href="/besuch" className={styles.visitLink}>
+          <Link href="/visit" className={styles.visitLink}>
             Plan your visit
           </Link>
 

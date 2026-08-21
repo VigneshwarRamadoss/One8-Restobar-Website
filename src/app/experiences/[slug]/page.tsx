@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Header from '@/components/global/Header';
 import Footer from '@/components/global/Footer';
 import PrevisualBadge from '@/components/global/PrevisualBadge';
-import ReservationCTA from '@/components/global/ReservationCTA';
+import ReservationTrigger from '@/components/reservation/ReservationTrigger';
 import { getExperiences } from '@/lib/cms/content-provider';
 import { isContentPublishable } from '@/lib/cms/publication-policy';
 import styles from './ExperienceDetail.module.css';
@@ -106,7 +106,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
             </div>
             <div className={styles.orientationItem}>
               <span className={styles.orientationLabel}>Reserve</span>
-              <ReservationCTA variant="primary" />
+              <ReservationTrigger variant="primary" />
             </div>
           </div>
         </section>

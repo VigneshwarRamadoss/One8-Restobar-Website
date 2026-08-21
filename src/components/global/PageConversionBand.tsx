@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ReservationCTA from './ReservationCTA';
+import ReservationTrigger from '../reservation/ReservationTrigger';
 import styles from './PageConversionBand.module.css';
 
 interface SecondaryLink {
@@ -36,7 +36,7 @@ export default function PageConversionBand({
           {lead && <p className={styles.lead}>{lead}</p>}
 
           <div className={styles.actions}>
-            <ReservationCTA variant="primary" href={primaryCtaHref} className={styles.primaryBtn} />
+            <ReservationTrigger variant="primary" href={primaryCtaHref} className={styles.primaryBtn} />
             {secondaryLinks.map((link) => (
               <Link key={link.href} href={link.href} className={styles.secondaryLink}>
                 {link.label} <span aria-hidden="true">→</span>

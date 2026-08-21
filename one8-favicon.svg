@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title description">
+  <title id="title">One 8 Restobar monogram</title>
+  <desc id="description">A restrained number eighteen monogram in chalk and sand on an ink-blue field.</desc>
+  <rect width="64" height="64" rx="13" fill="#091A2A"/>
+  <rect x="2" y="2" width="60" height="60" rx="11" fill="none" stroke="#38586B" stroke-width="1" opacity="0.72"/>
+  <path d="M14.5 22.5 22 16v32M16.5 48h12" fill="none" stroke="#FFFDF8" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="41" cy="25" r="8.5" fill="none" stroke="#B69B76" stroke-width="4.5"/>
+  <circle cx="41" cy="40" r="9.5" fill="none" stroke="#B69B76" stroke-width="4.5"/>
+</svg>

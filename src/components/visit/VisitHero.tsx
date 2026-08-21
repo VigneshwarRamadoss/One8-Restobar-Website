@@ -1,4 +1,4 @@
-import ReservationCTA from '@/components/global/ReservationCTA';
+import ReservationTrigger from '@/components/reservation/ReservationTrigger';
 import { getCleanContact } from '@/lib/cms/publication-safety';
 import type { VenueContact } from '@/lib/cms/types';
 import styles from './VisitHero.module.css';
@@ -28,7 +28,7 @@ export default function VisitHero({ contact }: Props) {
             </p>
 
             <div className={styles.actions}>
-              <ReservationCTA variant="primary" href={cleanContact.openTableUrl} className={styles.primaryBtn} />
+              <ReservationTrigger variant="primary" href={cleanContact.openTableUrl} className={styles.primaryBtn} />
               {cleanContact.mapsUrl && (
                 <a
                   href={cleanContact.mapsUrl}

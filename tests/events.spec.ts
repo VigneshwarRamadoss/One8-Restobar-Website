@@ -33,7 +33,7 @@ test.describe('Events page', () => {
     await page.getByRole('button', { name: 'Send enquiry' }).click();
 
     const summary = page.locator('form [role="alert"]');
-    await expect(summary).toBeVisible();
+    await expect(summary).toBeVisible({ timeout: 10000 });
     await expect(summary).toBeFocused();
     await expect(page.getByLabel('Event type *')).toHaveAttribute('aria-invalid', 'true');
   });

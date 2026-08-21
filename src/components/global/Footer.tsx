@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getOperatingHours, getVenueContact } from '@/lib/cms/content-provider';
 import { getActiveNavItems } from '@/lib/config/navigation';
-import ReservationCTA from './ReservationCTA';
+import ReservationTrigger from '../reservation/ReservationTrigger';
 import LiveStatus from './LiveStatus';
 import styles from './Footer.module.css';
 
@@ -64,7 +64,7 @@ export default async function Footer() {
           </div>
 
           <div className={`${styles.column} ${styles.reserveColumn}`}>
-            <ReservationCTA variant="secondary" href={contact.openTableUrl} />
+            <ReservationTrigger variant="secondary" href={contact.openTableUrl} />
           </div>
         </div>
 
