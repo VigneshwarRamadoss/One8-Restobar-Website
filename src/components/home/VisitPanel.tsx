@@ -1,5 +1,6 @@
 import { getOperatingHours, getVenueContact } from '@/lib/cms/content-provider';
 import ReservationTrigger from '../reservation/ReservationTrigger';
+import MetalLine from '../global/MetalLine';
 import styles from './VisitPanel.module.css';
 
 export default async function VisitPanel() {
@@ -15,7 +16,8 @@ export default async function VisitPanel() {
     <section className={styles.section} aria-labelledby="visit-panel-title">
       <div className={styles.container}>
         <h2 id="visit-panel-title" className={styles.title}>Visit Us</h2>
-        
+        <MetalLine tone="silver" className={styles.metalRule} />
+
         <div className={styles.grid}>
           <div className={styles.column}>
             <h3 className={styles.label}>Location</h3>

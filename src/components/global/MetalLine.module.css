@@ -1,0 +1,42 @@
+.line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--metal-line-duration) var(--ease-out);
+  contain: layout paint;
+}
+
+.visible {
+  transform: scaleX(1);
+}
+
+.gold {
+  background: linear-gradient(
+    90deg,
+    var(--metal-gold-deep) 0%,
+    var(--metal-gold) 42%,
+    var(--metal-gold-highlight) 58%,
+    var(--metal-gold-deep) 100%
+  );
+}
+
+.silver {
+  background: linear-gradient(
+    90deg,
+    var(--metal-silver-deep) 0%,
+    var(--metal-silver) 44%,
+    var(--metal-silver-highlight) 57%,
+    var(--metal-silver-deep) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    transform: none;
+    transition: none;
+  }
+}
+

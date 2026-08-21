@@ -39,10 +39,29 @@
 }
 
 .row {
+  position: relative;
   display: flex;
   gap: 1.5rem;
   padding: 2rem 0;
   border-top: 1px solid var(--border-subtle);
+}
+
+.row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--metal-gold-deep),
+    var(--metal-gold-highlight),
+    var(--metal-gold-deep)
+  );
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--motion-ui) var(--ease-out);
 }
 
 .row:last-child {
@@ -116,6 +135,13 @@
 
 /* Desktop Styles */
 @media (min-width: 1024px) {
+
+  .activeRow::after,
+  .row:hover::after,
+  .row:focus-within::after {
+    transform: scaleX(1);
+  }
+
   .grid {
     flex-direction: row-reverse;
     gap: 8%;

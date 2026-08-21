@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import PrevisualBadge from '../global/PrevisualBadge';
+import MetalLine from '../global/MetalLine';
 import styles from './EventFeature.module.css';
 
 export default function EventFeature() {
@@ -27,6 +28,7 @@ export default function EventFeature() {
             our spaces are configured to accommodate your event requirements.
           </p>
 
+          <MetalLine tone="gold" className={styles.metalRule} />
           <ul className={styles.capacityList}>
             <li>
               <span className={styles.capacityLabel}>Seated Dining</span>

@@ -20,6 +20,15 @@
   --sand-500: #b98a55;
   --amber-500: #b8763d;
 
+  /* Restrained Metallic Accent System */
+  --metal-gold-deep: #806034;
+  --metal-gold: #c3a064;
+  --metal-gold-highlight: #ead49e;
+  --metal-silver-deep: #667177;
+  --metal-silver: #aeb8bd;
+  --metal-silver-highlight: #e0e4e5;
+  --metal-line-duration: 800ms;
+
   --danger-400: #e58a78;
   --success-400: #87aa94;
 

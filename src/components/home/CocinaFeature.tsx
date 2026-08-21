@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import PrevisualBadge from '../global/PrevisualBadge';
+import MetalLine from '../global/MetalLine';
 import styles from './CocinaFeature.module.css';
 
 export default function CocinaFeature() {
@@ -13,6 +14,7 @@ export default function CocinaFeature() {
             and let the fire do the rest. The focus is on authentic culinary methods, 
             executed with precision that honors every element on the plate.
           </p>
+          <MetalLine tone="silver" className={styles.metalRule} />
         </div>
         
         <div className={styles.diptych}>

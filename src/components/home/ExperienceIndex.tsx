@@ -67,7 +67,7 @@ export default function ExperienceIndex({ experiences }: Props) {
               return (
                 <div 
                   key={exp.id} 
-                  className={styles.row}
+                  className={`${styles.row} ${index === activeIndex ? styles.activeRow : ''}`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                 >

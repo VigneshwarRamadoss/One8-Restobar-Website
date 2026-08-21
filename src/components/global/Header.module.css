@@ -102,6 +102,7 @@
 }
 
 .navLink {
+  position: relative;
   font-size: var(--type-label);
   font-weight: 500;
   transition: opacity var(--motion-ui-fast) var(--ease-out);
@@ -110,8 +111,32 @@
   align-items: center;
 }
 
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--metal-silver-deep),
+    var(--metal-silver-highlight),
+    var(--metal-silver-deep)
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--motion-ui) var(--ease-out);
+}
+
 .navLink:hover {
   opacity: 0.7;
+}
+
+.navLink:hover::after,
+.navLink:focus-visible::after,
+.navLink[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 .navLink:focus-visible {

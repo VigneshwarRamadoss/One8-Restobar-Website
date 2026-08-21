@@ -1,5 +1,8 @@
 /* Trigger styling */
 .trigger {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -55,6 +58,34 @@
   border: 1px solid var(--paper-50);
   padding: 0 1.25rem;
   height: 44px;
+}
+
+.nav::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -40%;
+  bottom: -40%;
+  left: -35%;
+  width: 18%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--metal-gold-highlight) 65%, transparent),
+    transparent
+  );
+  transform: translateX(-220%) skewX(-18deg);
+}
+
+.nav:hover::after,
+.nav:focus-visible::after {
+  animation: reservationMetalSweep 700ms var(--ease-out) 1;
+}
+
+@keyframes reservationMetalSweep {
+  from { transform: translateX(-220%) skewX(-18deg); }
+  to { transform: translateX(820%) skewX(-18deg); }
 }
 
 .nav:hover {

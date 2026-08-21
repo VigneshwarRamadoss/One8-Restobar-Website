@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import PrevisualBadge from '../global/PrevisualBadge';
+import MetalLine from '../global/MetalLine';
 import { getMenu, formatPrice } from '@/lib/cms/content-provider';
 import styles from './MenuFeature.module.css';
 
@@ -21,6 +22,8 @@ export default async function MenuFeature() {
             <Link href="/menus/food" className={styles.link}>View the food menu</Link>
           </div>
         </div>
+
+        <MetalLine tone="gold" className={styles.metalRule} />
 
         <div className={styles.layout}>
           <div className={styles.menuSnippet}>

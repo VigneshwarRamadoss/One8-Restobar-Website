@@ -17,6 +17,11 @@
   max-width: 32ch; /* Narrow measure for editorial feel */
 }
 
+.metalRule {
+  width: clamp(4.5rem, 9vw, 8rem);
+  margin-bottom: 2rem;
+}
+
 .text {
   font-size: var(--type-heading-m);
   font-family: var(--font-display);
